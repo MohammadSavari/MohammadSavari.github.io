@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.html %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+	<style>
+	  .portfolio-viewer {
+		position: relative;
+		background-color: var(--global-card-bg-color);
+		border: 1px solid var(--global-divider-color);
+		border-radius: 6px;
+		min-height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem;
+		margin-bottom: 2rem;
+		overflow-y: auto;
+		max-height: 80vh;
+	  }
+
+	  #canvas {
+		max-width: 100%;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+	  }
+
+	  .loading {
+		text-align: center;
+		color: var(--global-theme-color);
+		font-size: 1.1rem;
+	  }
+
+	  .portfolio-controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		padding: 2rem 0 4rem;
+		flex-wrap: wrap;
+		border-top: 1px solid var(--global-divider-color);
+		margin-top: 2rem;
+	  }
+
+	  .portfolio-controls button {
+		padding: 0.625rem 1.25rem;
+		background-color: var(--global-theme-color);
+		color: var(--global-hover-text-color);
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		font-size: 0.95rem;
+		font-weight: 500;
+		transition: all 0.2s ease-in-out;
+	  }
+
+	  .portfolio-controls button:hover:not(:disabled) {
+		opacity: 0.9;
+	  }
+
+	  .portfolio-controls button:disabled {
+		background-color: var(--global-text-color-light);
+		cursor: not-allowed;
+	  }
+
+	  .page-info {
+		color: var(--global-text-color);
+		font-weight: 500;
+		font-size: 0.95rem;
+		min-width: 120px;
+		text-align: center;
+	  }
+
+	  .page-info span {
+		color: var(--global-theme-color);
+		font-weight: 600;
+	  }
+
+	  .portfolio-viewer::-webkit-scrollbar {
+		width: 8px;
+	  }
+
+	  .portfolio-viewer::-webkit-scrollbar-track {
+		background: var(--global-bg-color);
+	  }
+
+	  .portfolio-viewer::-webkit-scrollbar-thumb {
+		background: var(--global-theme-color);
+		border-radius: 4px;
+	  }
+
+	  .portfolio-viewer::-webkit-scrollbar-thumb:hover {
+		background: var(--global-hover-color);
+	  }
+
+	  @media (max-width: 576px) {
+		.portfolio-viewer {
+		  min-height: 400px;
+		  padding: 0.5rem;
+		}
+
+		.portfolio-controls button {
+		  padding: 0.5rem 1rem;
+		  font-size: 0.9rem;
+		}
+	  }
+	</style>
+  </head>
+
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    {% include header.html %}
+
+    <div class="container mt-5">
+      <h1>{{ page.title }}</h1>
+      
+      <div class="portfolio-viewer">
+        <div id="loading" class="loading">Loading PDF...</div>
+        <canvas id="canvas" style="display: none;"></canvas>
+      </div>
+
+      <div class="portfolio-controls">
+        <button id="prevBtn" onclick="previousPage()">← Previous</button>
+        <div class="page-info">
+          <span id="pageNum">1</span> / <span id="pageCount">0</span>
+        </div>
+        <button id="nextBtn" onclick="nextPage()">Next →</button>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts/jquery.html %}
+    {% include scripts/bootstrap.html %}
+    {% include scripts/masonry.html %}
+    {% include scripts/misc.html %}
+    {% include scripts/badges.html %}
+    {% include scripts/mathjax.html %}
+    {% include scripts/analytics.html %}
+    {% include scripts/progressBar.html %}
+
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+      const pdfPath = '{{ site.baseurl }}{{ page.pdf_file }}';
+      let pdfDoc = null;
+      let currentPage = 1;
+
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const loadingDiv = document.getElementById('loading');
+      const viewer = document.querySelector('.portfolio-viewer');
+
+      async function loadPDF() {
+        try {
+          pdfDoc = await pdfjsLib.getDocument(pdfPath).promise;
+          document.getElementById('pageCount').textContent = pdfDoc.numPages;
+          loadingDiv.style.display = 'none';
+          canvas.style.display = 'block';
+          renderPage(1);
+        } catch (error) {
+          loadingDiv.textContent = 'Error loading PDF. Make sure the PDF path is correct in portfolio.md';
+          console.error('Error loading PDF:', error);
+        }
+      }
+
+      async function renderPage(pageNum) {
+        if (!pdfDoc) return;
+        if (pageNum < 1 || pageNum > pdfDoc.numPages) return;
+
+        currentPage = pageNum;
+        const page = await pdfDoc.getPage(pageNum);
+        const viewport = page.getViewport({ scale: 1.5 });
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({
+          canvasContext: ctx,
+          viewport: viewport
+        }).promise;
+
+        document.getElementById('pageNum').textContent = pageNum;
+        viewer.scrollTop = 0;
+
+        document.getElementById('prevBtn').disabled = pageNum === 1;
+        document.getElementById('nextBtn').disabled = pageNum === pdfDoc.numPages;
+      }
+
+      function nextPage() {
+        if (currentPage < pdfDoc.numPages) {
+          renderPage(currentPage + 1);
+        }
+      }
+
+      function previousPage() {
+        if (currentPage > 1) {
+          renderPage(currentPage - 1);
+        }
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextPage();
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') previousPage();
+      });
+
+      loadPDF();
+    </script>
+  </body>
+</html>
