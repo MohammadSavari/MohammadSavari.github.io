@@ -8,3 +8,27 @@ _site
 .tweet-cache
 Gemfile.lock
 vendor
+
+# Python, Jupyter, and slurm checkpoint files
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+*.out
