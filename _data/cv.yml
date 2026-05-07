@@ -3,138 +3,146 @@
   type: time_table
   contents:
     - title: Project Manager
-      institution: Centre for Entrepreneurship and Engineering Design, Ottawa
+      institution: Centre for Entrepreneurship and Engineering Design, Ottawa, Canada
       year: Sep 2024 - Present
       description:
-        - Manage four groups of brilliant students to understand, design, and create accessibility devices
-        - Review documentation and provide feedback to groups to ensure they meet client needs
-        - Monitor the groups' design process and project management timeline
-        - Coordinate procurement for the students' products to support the project's implementation
+        - Manage four interdisciplinary student teams developing accessibility-focused engineering devices from concept to prototype.
+        - Review technical documentation, design reports, and project deliverables to ensure alignment with client requirements.
+        - Monitor design progress, project timelines, milestones, and risk areas to support successful project execution.
+        - Coordinate procurement of components, materials, and resources required for prototype development and implementation.
+        - Provide guidance on feasibility, usability, documentation quality, and client-centered engineering design.
 
     - title: Search Engine Evaluator
       institution: TELUS International
       year: Jun 2024 - Present
       description:
-        - Analyzing search engine results to ensure they meet the specified relevance, accuracy, and comprehensiveness criteria
-        - Reviewing web pages and online content to determine their quality, reliability, and user-friendliness
-        - Collecting and analyzing data to identify trends and patterns that help improve search algorithms and content delivery
-        - Ensuring that search results and content are culturally relevant and appropriate for the target audience
-        - Staying updated with the latest search engine algorithms, web trends, and internet best practices to provide accurate assessments
-
+        - Evaluate search engine results for relevance, accuracy, completeness, and alignment with user intent.
+        - Review web pages and online content to assess quality, reliability, usability, and cultural appropriateness.
+        - Analyze search result patterns and content characteristics to support improvements in information retrieval quality.
+        - Apply structured evaluation guidelines with consistency, attention to detail, and analytical judgment.
+        - Stay current with search engine trends, web content practices, and digital information quality standards.
 
     - title: System Engineering Intern
-      institution: Airshare Inc., Ottawa, Canada
+      institution: AirShare Inc., Ottawa, Canada
       year: Sep 2023 - Mar 2024
       description:
-        - Developed and implemented system models to optimize performance and validate design integrity
-        - Established and maintained a stable communication framework, enhancing system reliability
-        - Managed procurement and field testing to ensure project efficiency and high-quality outcomes
-
+        - Developed and implemented system models to support performance optimization and design validation.
+        - Established and maintained communication frameworks to improve system reliability and operational stability.
+        - Supported sensor calibration, sensor fusion, and data validation activities to improve system-level accuracy.
+        - Coordinated procurement and field testing activities to support efficient project execution and high-quality outcomes.
+        - Assisted with troubleshooting, technical documentation, and system performance evaluation.
 
     - title: Front-End Associate
       institution: Walmart Canada, Ottawa, Canada
       year: May 2022 - Sep 2024
       description:
-        - Greet and assist customers, address inquiries, and resolve issues to ensure a positive experience
-        - Accurately process transactions, handle payments, and maintain a balanced cash register
-        - Provide product information and recommendations, stay updated on promotions and policies, and handle returns to ensure customer satisfaction
-        - Collaborate with team members to keep the checkout area clean and organized while adhering to policies and safety standards
-
+        - Delivered customer service in a high-volume retail environment while resolving inquiries and supporting positive customer experiences.
+        - Processed transactions accurately, handled payments, and maintained cash register accountability.
+        - Communicated product information, promotions, and store policies to customers.
+        - Supported returns, issue resolution, and customer satisfaction in accordance with company procedures.
+        - Collaborated with team members to maintain an organized, safe, and efficient checkout environment.
 
 - title: Academic Experience
   type: time_table
   contents:
     - title: Complex Networks Researcher
-      institution: Telfer School of Management, Ottawa
+      institution: Telfer School of Management, University of Ottawa, Ottawa, Canada
       year: May 2025 - Present
       description:
-        - Identify and characterize sub-networks, communities, and topological properties in complex global networks using network science methodologies
-        - Collect data via web scraping, NLP analysis, and manual extraction; implement data cleaning and matching protocols
-        - Investigate mechanisms driving network formation, evolution, and inter-organizational relationships within complex systems
-        - Generate network visualizations and computational models using Python and GEPHI software
-        - Examine collaboration patterns and classify organizational roles (NGOs, MNCs, non-state actors) within interconnected alliance networks
+        - Identify and characterize sub-networks, communities, and topological properties in complex global networks using network science methods.
+        - Collect, clean, and integrate data through web scraping, natural language processing, manual extraction, and entity-matching protocols.
+        - Investigate mechanisms driving network formation, network evolution, and inter-organizational relationships in complex systems.
+        - Develop network visualizations, computational models, and exploratory analyses using Python and Gephi.
+        - Analyze collaboration patterns and classify organizational roles, including NGOs, multinational corporations, and non-state actors, within interconnected alliance networks.
 
-    
     - title: Social Contagion Researcher
-      institution: Faculty of Engineering, University of Ottawa
+      institution: Faculty of Engineering, University of Ottawa, Ottawa, Canada
       year: Sep 2021 - Present
       description:
-        - Contributed to developing a new method for integrating the systems' dynamic in the solution of the social contagion on networks
-        - Assessed the former measures of information propagation on the network
-        - Proposed the system's dynamic as an essential property of the network analysis
-        - Developed a heterogeneous free-scale network with tuneable clustering
-        - Implemented distribution likelihood analyses to determine the free-scaliness of the new model
-        - Prepared reports, documentation, and group presentations
+        - Develop computational models to study social contagion, consensus formation, and information propagation on complex networks.
+        - Contribute to a new modeling framework that integrates system dynamics into the analysis of social contagion processes.
+        - Evaluate existing measures of information propagation and assess their applicability to dynamic networked systems.
+        - Propose system dynamics as a key property for improving the analysis of network behavior and collective decision-making.
+        - Develop heterogeneous scale-free network models with tunable clustering properties.
+        - Implement distribution likelihood analyses to evaluate scale-free characteristics in generated network models.
+        - Prepare research documentation, technical reports, presentations, and manuscript materials.
 
-
-    - title: Teaching Assistant 
+    - title: Teaching Assistant
       institution: University of Ottawa, Ottawa, Canada
       year: Jan 2022 - Present
       description:
-        - Mechatronics
-        - Systems Dynamics
-        - Biomedical Systems Dynamics
-        - Introduction to Product Development for Engineers and Computer Scientists
-        - Machine Learning in Control (Corrector)
-        - Robotics (Corrector)
-        
-        
+        - Supported undergraduate and graduate-level courses through tutorials, laboratories, grading, student support, and course administration.
+        - Assisted students with system dynamics, mechatronics, biomedical systems, robotics, product development, and machine learning for control concepts.
+        - Provided feedback on assignments, projects, and technical submissions to strengthen student learning outcomes.
+        - Courses supported:
+          - Mechatronics
+          - Systems Dynamics
+          - Biomedical Systems Dynamics
+          - Introduction to Product Development for Engineers and Computer Scientists
+          - Machine Learning in Control
+          - Robotics
+
 - title: Education
   type: time_table
   contents:
     - title: Ph.D. in Mechanical Engineering
       institution: University of Ottawa, Ottawa, Canada
-      year: 2021 - 2026 (exp'd)
+      year: 2021 - 2026 expected
       description:
-        - "<b>Thesis Title:</b> Fostering Consensus using Social Contagion"
-        - Granted a direct-Ph.D. path from bachelor
-        - Awarded a full admission scholarship and a merit scholarship from the University of Ottawa
+        - "<b>Thesis Title:</b> Fostering Consensus Using Social Contagion"
+        - Pursuing doctoral research in complex systems, social contagion, consensus formation, and computational network modeling.
+        - Granted direct admission to the Ph.D. program from a bachelor's degree.
+        - Awarded a full admission scholarship and merit scholarship from the University of Ottawa.
 
     - title: Bachelor of Science in Electrical Engineering
-      # institution: Arak University of Technology, Arak, Iran
+      institution: Arak University of Technology, Arak, Iran
       year: 2014 - 2018
 
 - title: Skills
   type: nested_list
   contents:
-    - title: Programming & Analysis
-      items: 
-        - "Python | R | MATLAB | LabVIEW | Statistical analysis and data-driven insights"
-    - title: Embedded Systems  
+    - title: Programming & Data Analysis
       items:
-        - "Atmel chips | Arduino | PLC platforms (LOGO, Siemens Step 7)"
-    - title: Research & Technical Skills
+        - "Python | R | MATLAB | LabVIEW | Statistical analysis | Data processing | Computational modeling | Data-driven decision-making"
+
+    - title: Network Science & Complex Systems
       items:
-        - "Complex systems modeling | Reinforcement learning | Multi-agent systems | Social contagion analysis | Network development | Data processing and analysis"
-    - title: Other Skills
+        - "Complex systems modeling | Social contagion analysis | Consensus formation | Network development | Community detection | Scale-free networks | Multi-agent systems | Reinforcement learning"
+
+    - title: Control, Embedded & Automation Systems
       items:
-        - "Project management | Leadership and team motivation | Strong analytical and problem-solving abilities | Excellent communication and collaboration skills"
+        - "Control systems | System dynamics | Sensor calibration | Sensor fusion | Atmel microcontrollers | Arduino | PLC platforms | LOGO | Siemens Step 7"
+
+    - title: Research & Academic Skills
+      items:
+        - "Literature review | Experimental design | Simulation-based research | Technical writing | Research documentation | Conference presentations | Manuscript preparation"
+
+    - title: Professional Skills
+      items:
+        - "Project management | Leadership | Team coordination | Analytical problem-solving | Technical communication | Cross-functional collaboration"
 
 - title: Publications
   type: time_table
   contents:
-    - year: 2025 (submitted)
-      items: 
-        - "Savari, M., et al. How social contagions shape collective consensus in the presence of scale-free networks"
+    - year: 2025 submitted
+      items:
+        - "Savari, M., et al. How Social Contagions Shape Collective Consensus in the Presence of Scale-Free Networks."
 
 - title: Conferences
   type: time_table
   contents:
     - year: Jul 2025
-      items: 
-        - "Leveraging Social Contagion to Foster Consensus in Collective Decision-Making (abstract paper), International Conference on Computational Science (ICCS), Singapore"
+      items:
+        - "Savari, M., et al. Leveraging Social Contagion to Foster Consensus in Collective Decision-Making. Abstract paper presented at the International Conference on Computational Science, Singapore."
 
-- title: Voluntary and Community Services
+- title: Voluntary and Community Service
   type: time_table
   contents:
     - title: Mechanical Engineering Departmental Director
-      institution: Graduate Student's Association (GSAÉD), Ottawa, Canada
+      institution: Graduate Student's Association, University of Ottawa, Ottawa, Canada
       year: Jun 2021 - Apr 2025
       description:
-        - Preparing communicative materials, responding to emails, administration of the submission and review process, and preparing the proceeding
-
-    # - title: Head of Performance Arts Club
-      # institution: Arak University of Technology, Arak, Iran
-      # year: Sep 2015 - Apr 2017
-      # description:
-        # - Assisted in event management, venue preparation, guiding the guests, and communication
+        - Represented graduate students in the Mechanical Engineering Department within the Graduate Student's Association.
+        - Prepared communication materials, responded to student inquiries, and supported administrative coordination.
+        - Assisted with submission, review, and documentation processes for departmental and association activities.
+        - Contributed to event coordination, procedural communication, and preparation of official materials.
