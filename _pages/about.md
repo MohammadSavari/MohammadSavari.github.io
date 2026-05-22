@@ -2,7 +2,8 @@
 layout: about
 title: About
 permalink: /
-subtitle: <b>Ph.D. Candidate @ University of Ottawa</b>
+
+subtitle: <b>Ph.D. Candidate @ </b><a href="https://uniweb.uottawa.ca/view/profile/members/4849"><b>University of Ottawa</b></a>
 
 profile:
   align: right
