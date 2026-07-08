@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <!-- Head -->
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
     
     <!-- Website verification -->
     <meta name="google-site-verification" content="qvjtIMYs0Yya2AzaVj8a1AlDREyuPRXH_r6n2HvCuso">
@@ -17,10 +18,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portfolio | Mohammad  Savari</title>
+    <title>One-Handed Switch Controller | Mohammad  Savari</title>
     <meta name="author" content="Mohammad  Savari">
-    <meta name="description" content="Ph.D. Candidate in Mechanical Engineering at the University of Ottawa, researching complex networks, social contagion, and consensus formation.
-">
+    <meta name="description" content="An adaptive Nintendo Switch controller attachment for a client who can only use one hand.">
     <meta name="keywords" content="Mohammad Savari, PhD candidate, network science, social contagion, complex systems, consensus formation, system dynamics, University of Ottawa, mechanical engineering">
 
 
@@ -46,7 +46,7 @@
     <link rel="shortcut icon" href="/assets/img/icon.jpg">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://mohammadsavari.github.io/portfolio/">
+    <link rel="canonical" href="https://mohammadsavari.github.io/projects/02_one-handed-switch-controller/">
 
     <!-- Dark Mode -->
     
@@ -67,114 +67,12 @@
       gtag('config', 'G-4Z5H18TD4K');
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-	<style>
-	  .portfolio-viewer {
-		position: relative;
-		background-color: var(--global-card-bg-color);
-		border: 1px solid var(--global-divider-color);
-		border-radius: 6px;
-		min-height: auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0.5rem;
-		margin-bottom: 2rem;
-		overflow-y: auto;
-		max-height: 80vh;
-	  }
-
-	  #canvas {
-		max-width: 100%;
-		height: auto;
-		display: block;
-		margin: 0 auto;
-	  }
-
-	  .loading {
-		text-align: center;
-		color: var(--global-theme-color);
-		font-size: 1.1rem;
-	  }
-
-	  .portfolio-controls {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		padding: 2rem 0 4rem;
-		flex-wrap: wrap;
-		border-top: 1px solid var(--global-divider-color);
-		margin-top: 2rem;
-	  }
-
-	  .portfolio-controls button {
-		padding: 0.625rem 1.25rem;
-		background-color: var(--global-theme-color);
-		color: var(--global-hover-text-color);
-		border: none;
-		border-radius: 6px;
-		cursor: pointer;
-		font-size: 0.95rem;
-		font-weight: 500;
-		transition: all 0.2s ease-in-out;
-	  }
-
-	  .portfolio-controls button:hover:not(:disabled) {
-		opacity: 0.9;
-	  }
-
-	  .portfolio-controls button:disabled {
-		background-color: var(--global-text-color-light);
-		cursor: not-allowed;
-	  }
-
-	  .page-info {
-		color: var(--global-text-color);
-		font-weight: 500;
-		font-size: 0.95rem;
-		min-width: 120px;
-		text-align: center;
-	  }
-
-	  .page-info span {
-		color: var(--global-theme-color);
-		font-weight: 600;
-	  }
-
-	  .portfolio-viewer::-webkit-scrollbar {
-		width: 8px;
-	  }
-
-	  .portfolio-viewer::-webkit-scrollbar-track {
-		background: var(--global-bg-color);
-	  }
-
-	  .portfolio-viewer::-webkit-scrollbar-thumb {
-		background: var(--global-theme-color);
-		border-radius: 4px;
-	  }
-
-	  .portfolio-viewer::-webkit-scrollbar-thumb:hover {
-		background: var(--global-hover-color);
-	  }
-
-	  @media (max-width: 576px) {
-		.portfolio-viewer {
-		  min-height: 400px;
-		  padding: 0.5rem;
-		}
-
-		.portfolio-controls button {
-		  padding: 0.5rem 1rem;
-		  font-size: 0.9rem;
-		}
-	  }
-	</style>
   </head>
 
+  <!-- Body -->
   <body class="fixed-top-nav sticky-bottom-footer">
-    
+
+    <!-- Header -->
     <header>
 
       <!-- Nav Bar -->
@@ -205,8 +103,8 @@
               <li class="nav-item ">
                 <a class="nav-link" href="/projects/">Projects</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/portfolio/">Portfolio<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/portfolio/">Portfolio</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="/cv/">CV</a>
@@ -233,29 +131,43 @@
     </header>
 
 
+    <!-- Content -->
     <div class="container mt-5">
-      <h1>Portfolio</h1>
       
-      <div class="portfolio-viewer">
-        <div id="loading" class="loading">Loading PDF...</div>
-        <canvas id="canvas" style="display: none;"></canvas>
-      </div>
+        <!-- page.html -->
+        <div class="post">
 
-      <div class="portfolio-controls">
-        <button id="prevBtn" onclick="previousPage()">← Previous</button>
-        <div class="page-info">
-          <span id="pageNum">1</span> / <span id="pageCount">0</span>
+          <header class="post-header">
+            <h1 class="post-title">One-Handed Switch Controller</h1>
+            <p class="post-description">An adaptive Nintendo Switch controller attachment for a client who can only use one hand.</p>
+          </header>
+
+          <article>
+            <p>As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.</p>
+
+<p><strong>Client brief:</strong> The client uses a Nintendo Switch controller but can only use their right hand, making it difficult to press multiple buttons simultaneously for in-game actions. The team’s task was to design a device that presses multiple buttons at once with one hand, without interfering with the controller’s other inputs.</p>
+
+<p><strong>Team &amp; solution:</strong></p>
+
+<ul>
+  <li>
+<a href="https://makerepo.com/farooqqureshi/2841.ctrl-sync-one-handed-switch-controller-" rel="external nofollow noopener" target="_blank">CTRL SYNC’s One-Handed Switch Controller</a> — an adaptive attachment for the Joy-Con controller, developed through an iterative, user-centered design process with the client, allowing one-handed access to all controller inputs without changing how the game is played.</li>
+</ul>
+
+          </article>
+
         </div>
-        <button id="nextBtn" onclick="nextPage()">Next →</button>
-      </div>
+
+      
     </div>
 
-    <footer class="sticky-bottom mt-5">
+    <!-- Footer --><footer class="sticky-bottom mt-5">
       <div class="container text-center">
         © Copyright 2026 Mohammad  Savari 
       </div>
     </footer>
 
+    <!-- JavaScripts -->
     <!-- jQuery -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -375,73 +287,5 @@
   }
 </script>
 
-
-    <script>
-      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-      const pdfPath = '/assets/pdf/portfolio.pdf';
-      let pdfDoc = null;
-      let currentPage = 1;
-
-      const canvas = document.getElementById('canvas');
-      const ctx = canvas.getContext('2d');
-      const loadingDiv = document.getElementById('loading');
-      const viewer = document.querySelector('.portfolio-viewer');
-
-      async function loadPDF() {
-        try {
-          pdfDoc = await pdfjsLib.getDocument(pdfPath).promise;
-          document.getElementById('pageCount').textContent = pdfDoc.numPages;
-          loadingDiv.style.display = 'none';
-          canvas.style.display = 'block';
-          renderPage(1);
-        } catch (error) {
-          loadingDiv.textContent = 'Error loading PDF. Make sure the PDF path is correct in portfolio.md';
-          console.error('Error loading PDF:', error);
-        }
-      }
-
-      async function renderPage(pageNum) {
-        if (!pdfDoc) return;
-        if (pageNum < 1 || pageNum > pdfDoc.numPages) return;
-
-        currentPage = pageNum;
-        const page = await pdfDoc.getPage(pageNum);
-        const viewport = page.getViewport({ scale: 1.5 });
-
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-
-        await page.render({
-          canvasContext: ctx,
-          viewport: viewport
-        }).promise;
-
-        document.getElementById('pageNum').textContent = pageNum;
-        viewer.scrollTop = 0;
-
-        document.getElementById('prevBtn').disabled = pageNum === 1;
-        document.getElementById('nextBtn').disabled = pageNum === pdfDoc.numPages;
-      }
-
-      function nextPage() {
-        if (currentPage < pdfDoc.numPages) {
-          renderPage(currentPage + 1);
-        }
-      }
-
-      function previousPage() {
-        if (currentPage > 1) {
-          renderPage(currentPage - 1);
-        }
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextPage();
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') previousPage();
-      });
-
-      loadPDF();
-    </script>
   </body>
 </html>

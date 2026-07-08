@@ -562,6 +562,13 @@ footer.sticky-bottom {
   margin-bottom: -2rem;
   text-align: right;
 }
+.publications .publication-item {
+  margin-bottom: 1.5rem;
+}
+.publications .publication-item .publication-byline {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
 .publications ol.bibliography {
   list-style: none;
   padding: 0;
