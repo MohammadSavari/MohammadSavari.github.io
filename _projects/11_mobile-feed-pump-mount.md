@@ -2,7 +2,7 @@
 layout: page
 title: Mobile Feed Pump Mount
 description: Two independent teams designed portable mounts letting a feeding-tube user travel with her pump.
-img: assets/img/projects/11-mobile-feed-pump-mount/medmount.jpg
+img: assets/img/projects/11-mobile-feed-pump-mount/1.png
 importance: 11
 ---
 
@@ -14,8 +14,12 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 
 - [MedMount](https://makerepo.com/Husaina/2464.medmount) — a mobile mount that securely holds the feeding pump and bag in various locations while maintaining safety and ease of use.
 
-  {% include figure.html path="assets/img/projects/11-mobile-feed-pump-mount/medmount.jpg" alt="MedMount" %}
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/11-mobile-feed-pump-mount/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/11-mobile-feed-pump-mount/1.png' | relative_url }}" alt="MedMount photo 1"></a>
+</div>
 
 - [Feed4ward](https://makerepo.com/lielilatov/2465.feed4ward) — a mount integrating the feeding system with the user's wheelchair and car for travel.
 
-  {% include figure.html path="assets/img/projects/11-mobile-feed-pump-mount/feed4ward.png" alt="Feed4ward" %}
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/11-mobile-feed-pump-mount/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/11-mobile-feed-pump-mount/2.png' | relative_url }}" alt="Feed4ward photo 1"></a>
+</div>

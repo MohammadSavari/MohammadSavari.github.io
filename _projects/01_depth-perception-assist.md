@@ -2,7 +2,7 @@
 layout: page
 title: Depth Perception Assist
 description: A wearable device giving audible distance feedback for a client with vision in only one eye.
-img: assets/img/projects/01-depth-perception-assist/proxi-glove.png
+img: assets/img/projects/01-depth-perception-assist/1.png
 importance: 1
 ---
 
@@ -13,3 +13,8 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 **Team & solution:**
 
 - [Proxi-Glove: Depth Perception Assistant](https://makerepo.com/raguiabah/2868.depth-perception-assist)
+
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/01-depth-perception-assist/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/01-depth-perception-assist/1.png' | relative_url }}" alt="Proxi-Glove photo 1"></a>
+  <a href="{{ '/assets/img/projects/01-depth-perception-assist/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/01-depth-perception-assist/2.png' | relative_url }}" alt="Proxi-Glove photo 2"></a>
+</div>

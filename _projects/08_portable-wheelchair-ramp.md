@@ -2,7 +2,7 @@
 layout: page
 title: Portable Wheelchair Ramp
 description: A lightweight, transportable ramp letting a wheelchair user clear a single step independently.
-img: assets/img/projects/08-portable-wheelchair-ramp/rapid-ramp.png
+img: assets/img/projects/08-portable-wheelchair-ramp/1.png
 importance: 8
 ---
 
@@ -13,3 +13,7 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 **Team & solution:**
 
 - [Rapid Ramp](https://makerepo.com/DevinMyers/2591.rapid-ramp) — an independent-use portable wheelchair ramp.
+
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/08-portable-wheelchair-ramp/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/08-portable-wheelchair-ramp/1.png' | relative_url }}" alt="Rapid Ramp photo 1"></a>
+</div>

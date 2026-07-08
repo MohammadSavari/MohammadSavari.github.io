@@ -2,7 +2,7 @@
 layout: page
 title: Arm-Supported Cup Holder
 description: Three independent teams designed arm-mounted mug and bottle holders for hands-full mobility-aid users.
-img: assets/img/projects/10-arm-supported-cup-holder/java-hook.png
+img: assets/img/projects/10-arm-supported-cup-holder/1.png
 importance: 10
 ---
 
@@ -12,14 +12,20 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 
 **Teams & solutions:**
 
-- [Java Hook](https://makerepo.com/tristanpigeon/2593.java-hook) — a TPU bracket that conforms to different mug radii, with adjustable velcro straps for a range of mug and arm sizes.
-
-  {% include figure.html path="assets/img/projects/10-arm-supported-cup-holder/java-hook.png" alt="Java Hook" %}
-
 - [UniMug](https://makerepo.com/Darrell/2595.unimug) — a spring-loaded, strap-based handle system that securely holds multiple mugs or bottles for hands-free carrying.
 
-  {% include figure.html path="assets/img/projects/10-arm-supported-cup-holder/unimug.png" alt="UniMug" %}
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/10-arm-supported-cup-holder/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/10-arm-supported-cup-holder/1.png' | relative_url }}" alt="UniMug photo 1"></a>
+</div>
 
 - [AM2G — Any Mug to Go](https://makerepo.com/ScottFulton/2594.arm-mounted-mugbottle-holder-team-am2g-any-mug-to-go) — an arm-mounted mug/bottle holder for a client with limited ability in one hand.
 
-  {% include figure.html path="assets/img/projects/10-arm-supported-cup-holder/am2g.jpg" alt="AM2G Any Mug to Go" %}
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/10-arm-supported-cup-holder/2.jpg' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/10-arm-supported-cup-holder/2.jpg' | relative_url }}" alt="AM2G photo 1"></a>
+</div>
+
+- [Java Hook](https://makerepo.com/tristanpigeon/2593.java-hook) — a TPU bracket that conforms to different mug radii, with adjustable velcro straps for a range of mug and arm sizes.
+
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/10-arm-supported-cup-holder/3.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/10-arm-supported-cup-holder/3.png' | relative_url }}" alt="Java Hook photo 1"></a>
+</div>
