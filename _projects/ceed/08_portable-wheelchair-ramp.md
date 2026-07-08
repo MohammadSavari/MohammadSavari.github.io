@@ -2,8 +2,9 @@
 layout: page
 title: Portable Wheelchair Ramp
 description: A lightweight, transportable ramp letting a wheelchair user clear a single step independently.
-img: assets/img/projects/08-portable-wheelchair-ramp/1.png
+img: assets/img/projects/ceed/08-portable-wheelchair-ramp/1.png
 importance: 8
+category: ceed
 ---
 
 As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
@@ -15,5 +16,5 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 - [Rapid Ramp](https://makerepo.com/DevinMyers/2591.rapid-ramp) — an independent-use portable wheelchair ramp.
 
 <div class="project-gallery">
-  <a href="{{ '/assets/img/projects/08-portable-wheelchair-ramp/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/08-portable-wheelchair-ramp/1.png' | relative_url }}" alt="Rapid Ramp photo 1"></a>
+  <a href="{{ '/assets/img/projects/ceed/08-portable-wheelchair-ramp/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/08-portable-wheelchair-ramp/1.png' | relative_url }}" alt="Rapid Ramp photo 1"></a>
 </div>

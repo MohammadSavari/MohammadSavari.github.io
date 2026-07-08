@@ -2,8 +2,9 @@
 layout: page
 title: Ambu Bag Squeeze
 description: A device that independently operates a lung volume recruitment bag for a client without caregiver help.
-img: assets/img/projects/06-ambu-bag-squeeze/1.jpg
+img: assets/img/projects/ceed/06-ambu-bag-squeeze/1.jpg
 importance: 6
+category: ceed
 ---
 
 As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
@@ -15,5 +16,5 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 - [Team Awesome — Ambu Bag Squeeze Device](https://makerepo.com/TylerFischer/2759.ambu-bag-squeeze) — a device that performs the client's inhalation and exhalation exercises independently of a caregiver.
 
 <div class="project-gallery">
-  <a href="{{ '/assets/img/projects/06-ambu-bag-squeeze/1.jpg' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/06-ambu-bag-squeeze/1.jpg' | relative_url }}" alt="Ambu Bag Squeeze photo 1"></a>
+  <a href="{{ '/assets/img/projects/ceed/06-ambu-bag-squeeze/1.jpg' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/06-ambu-bag-squeeze/1.jpg' | relative_url }}" alt="Ambu Bag Squeeze photo 1"></a>
 </div>

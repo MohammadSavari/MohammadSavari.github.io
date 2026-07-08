@@ -2,8 +2,9 @@
 layout: page
 title: One-Handed Switch Controller
 description: An adaptive Nintendo Switch controller attachment for a client who can only use one hand.
-img: assets/img/projects/02-one-handed-switch-controller/1.png
+img: assets/img/projects/ceed/02-one-handed-switch-controller/1.png
 importance: 2
+category: ceed
 ---
 
 As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
@@ -15,6 +16,6 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 - [CTRL SYNC's One-Handed Switch Controller](https://makerepo.com/farooqqureshi/2841.ctrl-sync-one-handed-switch-controller-) — an adaptive attachment for the Joy-Con controller, developed through an iterative, user-centered design process with the client, allowing one-handed access to all controller inputs without changing how the game is played.
 
 <div class="project-gallery">
-  <a href="{{ '/assets/img/projects/02-one-handed-switch-controller/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/02-one-handed-switch-controller/1.png' | relative_url }}" alt="CTRL SYNC photo 1"></a>
-  <a href="{{ '/assets/img/projects/02-one-handed-switch-controller/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/02-one-handed-switch-controller/2.png' | relative_url }}" alt="CTRL SYNC photo 2"></a>
+  <a href="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/1.png' | relative_url }}" alt="CTRL SYNC photo 1"></a>
+  <a href="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/2.png' | relative_url }}" alt="CTRL SYNC photo 2"></a>
 </div>
