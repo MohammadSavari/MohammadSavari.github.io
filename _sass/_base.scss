@@ -499,8 +499,10 @@ footer.sticky-bottom {
 // Projects
 
 .projects {
-  a {
+  .project-card-link {
     text-decoration: none;
+    display: block;
+    height: 100%;
 
     &:hover {
       .card-title {
@@ -515,6 +517,14 @@ footer.sticky-bottom {
     }
   }
 
+  .project-card-img {
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+  }
+
   .card-item {
     width: auto;
     margin-bottom: 10px;
@@ -523,12 +533,6 @@ footer.sticky-bottom {
       display: flex;
       align-items: center;
     }
-  }
-
-  .grid-sizer,
-  .grid-item {
-    width: 250px;
-    margin-bottom: 10px;
   }
 
   h2.category {

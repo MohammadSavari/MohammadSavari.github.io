@@ -2,6 +2,7 @@
 layout: page
 title: Wheelchair Rocking Board — Play Therapy
 description: A rocking board letting children in wheelchairs roll on and enjoy a new type of movement.
+img: assets/img/projects/04-wheelchair-rocking-board-play/wheelchair-rocking-board.jpeg
 importance: 4
 ---
 

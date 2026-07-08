@@ -2,6 +2,7 @@
 layout: page
 title: Depth Perception Assist
 description: A wearable device giving audible distance feedback for a client with vision in only one eye.
+img: assets/img/projects/01-depth-perception-assist/proxi-glove.png
 importance: 1
 ---
 

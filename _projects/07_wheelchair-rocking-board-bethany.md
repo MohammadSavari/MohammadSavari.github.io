@@ -2,6 +2,7 @@
 layout: page
 title: Switch-Activated Wheelchair Rocking Board
 description: A 300-lb-rated rocking platform, activated by an adapted switch, for children with complex disabilities.
+img: assets/img/projects/07-wheelchair-rocking-board-bethany/we-will-rock-you.jpg
 importance: 7
 ---
 

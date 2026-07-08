@@ -2,6 +2,7 @@
 layout: page
 title: Ambu Bag Squeeze
 description: A device that independently operates a lung volume recruitment bag for a client without caregiver help.
+img: assets/img/projects/06-ambu-bag-squeeze/ambu-bag-squeeze.png
 importance: 6
 ---
 

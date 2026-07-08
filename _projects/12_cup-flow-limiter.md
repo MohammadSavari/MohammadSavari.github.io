@@ -2,6 +2,7 @@
 layout: page
 title: Cup Flow Limiter
 description: Three independent teams designed flow-restricting inserts for a Nosey Cup to prevent spills and choking risk.
+img: assets/img/projects/12-cup-flow-limiter/drippy-cup.jpg
 importance: 12
 ---
 
@@ -12,5 +13,13 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 **Teams & solutions:**
 
 - [The Drippy Cup](https://makerepo.com/sarabiedacha/2165.the-drippy-cup-) — a 2-piece 3D-printed cup with a built-in flow limiter in the lid, based on the Nosey Cup design.
+
+  {% include figure.html path="assets/img/projects/12-cup-flow-limiter/drippy-cup.jpg" alt="The Drippy Cup" %}
+
 - [Nosey Cup Hat](https://makerepo.com/AugustZhang/2146.nosey-cup-hat) — a silicone-cast specialized lid with a flow-control opening that clips onto the existing Nosey Cup rim.
+
+  {% include figure.html path="assets/img/projects/12-cup-flow-limiter/nosey-cup-hat.jpg" alt="Nosey Cup Hat" %}
+
 - [Flowtech Industries — CFL3](https://makerepo.com/libar076/2163.flowtech-industries-cfl3) — a flow limiter that attaches to an existing 8 oz Nosey Cup while preserving its profile.
+
+  {% include figure.html path="assets/img/projects/12-cup-flow-limiter/flowtech-cfl3.jpg" alt="Flowtech Industries CFL3" %}

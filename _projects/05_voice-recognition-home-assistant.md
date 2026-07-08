@@ -2,6 +2,7 @@
 layout: page
 title: Voice Recognition for Home Assistants
 description: Software to help users with unclear speech get recognized by devices like Alexa and Google Home.
+img: assets/img/projects/05-voice-recognition-home-assistant/voice-recognition.png
 importance: 5
 ---
 

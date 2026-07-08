@@ -2,6 +2,7 @@
 layout: page
 title: Guitar Strum Assist
 description: Two independent teams designed devices helping a one-handed guitarist strum again.
+img: assets/img/projects/03-guitar-strum-assist/mang.jpg
 importance: 3
 ---
 
@@ -12,4 +13,9 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 **Teams & solutions:**
 
 - [MANG Guitar Strum Assist](https://makerepo.com/Gcart027/2839.mang-guitar-strum-assist) — supports the client's right hand so they can hold chords with their left and let the device strum.
+
+  {% include figure.html path="assets/img/projects/03-guitar-strum-assist/mang.jpg" alt="MANG Guitar Strum Assist" %}
+
 - [Still Strummin' — Guitar Strum Assist](https://makerepo.com/mat404/2840.gng2101-still-strummin-guitar-strum-assist) — an adjustable one-handed mounting solution built around off-the-shelf hardware (lazy susan bearing, suction mounts).
+
+  {% include figure.html path="assets/img/projects/03-guitar-strum-assist/still-strummin.png" alt="Still Strummin' Guitar Strum Assist" %}

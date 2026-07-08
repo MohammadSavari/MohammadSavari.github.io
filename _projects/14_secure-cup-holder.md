@@ -2,6 +2,7 @@
 layout: page
 title: Secure Cup Holder
 description: Two independent teams designed cup holders that stay fixed to a wheelchair tray under sudden movement.
+img: assets/img/projects/14-secure-cup-holder/hydrohold.png
 importance: 14
 ---
 
@@ -12,4 +13,9 @@ As Project Manager at the Centre for Entrepreneurship and Engineering Design (CE
 **Teams & solutions:**
 
 - [HydroHold](https://makerepo.com/mbrom064/2463.hydrohold)
+
+  {% include figure.html path="assets/img/projects/14-secure-cup-holder/hydrohold.png" alt="HydroHold" %}
+
 - [Cup Crew](https://makerepo.com/LeaP/2466.cup-crew) — a secure, accessible cup holder for a wheelchair user with limited arm mobility, stable for variable cup sizes with adjustable positioning on the tray.
+
+  {% include figure.html path="assets/img/projects/14-secure-cup-holder/cup-crew.jpg" alt="Cup Crew" %}

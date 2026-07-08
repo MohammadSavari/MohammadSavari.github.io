@@ -5,63 +5,17 @@ permalink: /projects/
 description: Accessibility design projects I have managed as Project Manager at the University of Ottawa's Centre for Entrepreneurship and Engineering Design.
 nav: true
 nav_order: 3
-horizontal: false
 ---
 
-<!-- pages/projects.md -->
 <!-- markdownlint-disable MD033 -->
+<!-- pages/projects.md -->
 <div class="projects">
-{%- if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {%- for category in page.display_categories %}
-  <h2 class="category">{{ category }}</h2>
-  {%- assign categorized_projects = site.projects | where: "category", category -%}
-  {%- assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
-  <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
-    {%- endfor %}
-    </div>
-  </div>
-  {%- else -%}
-
-  <div class="container">
-    <div class="row row-cols-1">
-
-    {%- for project in sorted_projects -%}
-
-      {% include projects.html %}
-
-    {%- endfor %}
-
-    </div>
-  </div>
-
-  {%- endif -%}
-
-  {% endfor %}
-
-{%- else -%}
-<!-- Display projects without categories -->
   {%- assign sorted_projects = site.projects | sort: "importance" -%}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
   <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
-    {%- endfor %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+      {%- for project in sorted_projects -%}
+        {% include project_card.html %}
+      {%- endfor %}
     </div>
   </div>
-  {%- else -%}
-  <div class="grid">
-    {%- for project in sorted_projects -%}
-      {% include projects.html %}
-    {%- endfor %}
-  </div>
-  {%- endif -%}
-{%- endif -%}
 </div>

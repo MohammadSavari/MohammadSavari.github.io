@@ -2,6 +2,7 @@
 layout: page
 title: Portable Wheelchair Ramp
 description: A lightweight, transportable ramp letting a wheelchair user clear a single step independently.
+img: assets/img/projects/08-portable-wheelchair-ramp/rapid-ramp.png
 importance: 8
 ---
 

@@ -2,6 +2,7 @@
 layout: page
 title: One-Handed Switch Controller
 description: An adaptive Nintendo Switch controller attachment for a client who can only use one hand.
+img: assets/img/projects/02-one-handed-switch-controller/ctrl-sync.png
 importance: 2
 ---
 
