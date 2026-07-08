@@ -7,8 +7,6 @@ importance: 4
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
-
 **Brief:** A rocking board for children to use in hospitals, giving them another type of movement for fun.
 
 **Team & solution:**

@@ -7,8 +7,6 @@ importance: 5
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
-
 **Client brief:** Home assistant devices like Alexa work well for accessibility, but users whose voice is not clear can be misunderstood, which is frustrating. The task was to design a device or program that detects a muddled voice or sound and converts it into clear speech a home assistant can recognize, learning different users' speech patterns.
 
 **Team & solution:**

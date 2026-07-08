@@ -7,8 +7,6 @@ importance: 8
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
-
 **Client brief:** Wheelchair users travelling can be stopped entirely by a single step or curb with no ramp. The task was to design a portable ramp, transportable on a manual wheelchair, strong enough to support the person and chair yet light enough to deploy easily and ideally by the user independently, meeting the standard 1:12 slope for accessibility.
 
 **Team & solution:**

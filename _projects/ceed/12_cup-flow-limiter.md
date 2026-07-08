@@ -7,7 +7,7 @@ importance: 12
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project, in which three teams independently tackled the same client brief.
+Three teams independently tackled the same client brief.
 
 **Client brief:** The client's daughter uses a Nosey Cup so she doesn't have to tilt her head back as far when drinking, but liquid still flows out too fast and spills. The task was to design a device compatible with the Nosey Cup (or a new cup achieving the same result) that limits liquid flow, is washable, rugged, and easy to install, ideally with an adjustable opening.
 

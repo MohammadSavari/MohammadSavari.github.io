@@ -7,7 +7,7 @@ importance: 14
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project, in which two teams independently tackled the same client brief.
+Two teams independently tackled the same client brief.
 
 **Client brief:** The client wanted to keep their cup on their wheelchair tray rather than mounted elsewhere on the chair. The task was to design a device that securely holds a standard plastic coffee cup on the tray, waterproof and rugged enough not to be knocked off by sudden movement, with easily replaceable parts.
 

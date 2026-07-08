@@ -7,8 +7,6 @@ importance: 6
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
-
 **Client brief:** The client uses a lung volume recruitment bag (similar to a CPR ambu bag) but lacks the strength or dexterity to squeeze it themselves, making them dependent on a caregiver's schedule. The task was to design a device that squeezes the bag with the same volume as a person would, operable safely and independently with a single button press.
 
 **Team & solution:**

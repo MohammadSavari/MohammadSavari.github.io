@@ -11,16 +11,12 @@ nav_order: 3
 <!-- pages/projects.md -->
 <div class="projects">
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="row row-cols-1 row-cols-md-2">
 
-      <div class="col mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h3 class="card-title">VSSO</h3>
-            <p class="card-text">Details coming soon.</p>
-          </div>
-        </div>
-      </div>
+      {%- assign sorted_projects = site.projects | where_exp: "item", "item.category != 'ceed'" | sort: "importance" -%}
+      {%- for project in sorted_projects -%}
+        {% include project_card.html %}
+      {%- endfor %}
 
       <div class="col mb-4">
         <a href="{{ '/projects/ceed/' | relative_url }}" class="project-card-link">
@@ -35,11 +31,6 @@ nav_order: 3
           </div>
         </a>
       </div>
-
-      {%- assign sorted_projects = site.projects | where_exp: "item", "item.category != 'ceed'" | sort: "importance" -%}
-      {%- for project in sorted_projects -%}
-        {% include project_card.html %}
-      {%- endfor %}
 
     </div>
   </div>

@@ -7,8 +7,6 @@ importance: 2
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project.
-
 **Client brief:** The client uses a Nintendo Switch controller but can only use their right hand, making it difficult to press multiple buttons simultaneously for in-game actions. The team's task was to design a device that presses multiple buttons at once with one hand, without interfering with the controller's other inputs.
 
 **Team & solution:**

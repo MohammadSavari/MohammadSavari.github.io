@@ -7,7 +7,7 @@ importance: 7
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project, proposed by Bethany Children's Health Center, a pediatric rehabilitation and complex-care facility.
+This project was proposed by Bethany Children's Health Center, a pediatric rehabilitation and complex-care facility.
 
 **Client brief:** Many of the center's children have significant motor deficits and rely on assistive technology such as wheelchairs and switches. The client requested a rocking board that a wheelchair can roll onto, be tied down on, and activate with a button — able to support 300 lbs, move smoothly, include a safety stop, and accept the child's own switch-adapted controls.
 

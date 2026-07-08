@@ -7,7 +7,7 @@ importance: 9
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project, in which two teams independently tackled the same client brief.
+Two teams independently tackled the same client brief.
 
 **Client brief:** The client's daughter uses a manual wheelchair; weakness on her right side causes her head to drop forward and to the left, and she cannot reposition it herself. The task was to design a headrest that mounts to the existing wheelchair, keeps her head upright, and is easy to adjust and clean.
 

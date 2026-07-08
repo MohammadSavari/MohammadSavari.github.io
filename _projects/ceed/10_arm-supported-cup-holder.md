@@ -7,7 +7,7 @@ importance: 10
 category: ceed
 ---
 
-As Project Manager at the Centre for Entrepreneurship and Engineering Design (CEED), University of Ottawa, I oversaw this GNG2101 accessibility design project, in which three teams independently tackled the same client brief.
+Three teams independently tackled the same client brief.
 
 **Client brief:** People who use a mobility aid and have dexterity or strength limitations often have their hands full, making it hard to hold and drink from a travel mug. The client had found a mug with handle spacing that let it be carried on the forearm, but wanted a more adaptable, universal solution for other mugs. The task was to design a device that mounts safely and comfortably on an arm, holds a variety of travel mugs, and can be operated one-handed.
 
