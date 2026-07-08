@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://MohammadSavari.github.io/sitemap.xml
