@@ -2,14 +2,14 @@
 layout: page
 title: Projects
 permalink: /projects/
-description:
-nav: false
-nav_order: 1
-display_categories: [Ongoing, Published]
+description: Accessibility design projects I have managed as Project Manager at the University of Ottawa's Centre for Entrepreneurship and Engineering Design.
+nav: true
+nav_order: 3
 horizontal: false
 ---
 
 <!-- pages/projects.md -->
+<!-- markdownlint-disable MD033 -->
 <div class="projects">
 {%- if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
@@ -27,7 +27,6 @@ horizontal: false
     </div>
   </div>
   {%- else -%}
-
 
   <div class="container">
     <div class="row row-cols-1">
