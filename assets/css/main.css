@@ -518,9 +518,22 @@ footer.sticky-bottom {
 .projects .card img {
   width: 100%;
 }
+.projects .project-card-img {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.projects .project-card-img figure {
+  margin: 0;
+  height: 100%;
+}
+.projects .project-card-img picture {
+  display: block;
+  height: 100%;
+}
 .projects .project-card-img img {
   width: 100%;
-  height: 180px;
+  height: 100%;
+  aspect-ratio: 1/1;
   object-fit: cover;
 }
 .projects .project-gallery {
