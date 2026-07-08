@@ -507,14 +507,21 @@ footer.sticky-bottom {
   text-decoration: none;
 }
 
-.projects a {
+.projects .project-card-link {
   text-decoration: none;
+  display: block;
+  height: 100%;
 }
-.projects a:hover .card-title {
+.projects .project-card-link:hover .card-title {
   color: var(--global-theme-color);
 }
 .projects .card img {
   width: 100%;
+}
+.projects .project-card-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 .projects .card-item {
   width: auto;
@@ -523,11 +530,6 @@ footer.sticky-bottom {
 .projects .card-item .row {
   display: flex;
   align-items: center;
-}
-.projects .grid-sizer,
-.projects .grid-item {
-  width: 250px;
-  margin-bottom: 10px;
 }
 .projects h2.category {
   color: var(--global-divider-color);
