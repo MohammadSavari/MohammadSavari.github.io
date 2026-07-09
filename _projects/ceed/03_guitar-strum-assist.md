@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Guitar Strum Assist
-description: Two independent teams designed devices helping a one-handed guitarist strum again.
+description: A device that supports a client's hand in position to strum an acoustic guitar despite limited mobility on one side.
 img: assets/img/projects/ceed/03-guitar-strum-assist/1.png
 importance: 3
 category: ceed

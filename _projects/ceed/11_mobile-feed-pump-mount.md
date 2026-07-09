@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Mobile Feed Pump Mount
-description: Two independent teams designed portable mounts letting a feeding-tube user travel with her pump.
+description: A portable mount that installs a feeding-tube pump in different locations, like a car headrest or wheelchair, for travel.
 img: assets/img/projects/ceed/11-mobile-feed-pump-mount/1.png
 importance: 11
 category: ceed

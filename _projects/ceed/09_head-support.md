@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Head Support
-description: Two independent teams designed solutions to keep a wheelchair user's head upright.
+description: A wheelchair-mounted headrest that keeps a user's head upright and alerts when it tilts out of position.
 img: assets/img/projects/ceed/09-head-support/1.png
 importance: 9
 category: ceed
