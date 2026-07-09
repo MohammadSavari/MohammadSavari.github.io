@@ -8,6 +8,7 @@ _site
 .tweet-cache
 Gemfile.lock
 vendor
+tex/
 
 # Python, Jupyter, and slurm checkpoint files
 __pycache__/
@@ -32,4 +33,25 @@ var/
 .installed.cfg
 *.egg
 *.out
+
+# LaTeX generated files (auxiliary files)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.synctex.gz
+*.synctex
+*.fls
+*.fdb_latexmk
+*.dvi
+*.ps
+*.eps
+*.bcf
+*.run.xml
+*.log
 *.tex
+
