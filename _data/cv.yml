@@ -128,6 +128,10 @@
       items:
         - "Savari, M., et al. How Social Contagions Shape Collective Consensus in the Presence of Scale-Free Networks."
 
+    - year: 2023
+      items:
+        - "Kwa, H. L., Kit, J. L., Horsevad, N., Philippot, J., Savari, M., & Bouffanais, R. Adaptivity: A Path Towards General Swarm Intelligence? Frontiers in Robotics and AI, 10, 1163185."
+
 - title: Conferences
   type: time_table
   contents:

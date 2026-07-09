@@ -2,6 +2,7 @@
 layout: page
 title: VSSO Network Analysis
 description: Mapping the global network of voluntary sustainability standards organizations with Prof. José Carlos Marques, Telfer School of Management.
+img: assets/img/projects/vsso/1.PNG
 importance: 1
 ---
 
@@ -16,3 +17,7 @@ As a Complex Networks Researcher at the [Telfer School of Management](https://te
 - Investigate the mechanisms driving network formation, evolution, and inter-organizational relationships among VSSOs.
 - Develop network visualizations and computational models using Python and Gephi.
 - Analyze collaboration patterns and classify organizational roles — including NGOs, multinational corporations, and non-state actors — within these interconnected alliance networks.
+
+<div class="project-gallery">
+  <a href="{{ '/assets/img/projects/vsso/1.PNG' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/vsso/1.PNG' | relative_url }}" alt="VSSO network analysis"></a>
+</div>
