@@ -1,3 +1,16 @@
+{%- if site.last_updated -%}
+  {%- assign now_month = "now" | date: "%-m" | plus: 0 -%}
+  {%- case now_month -%}
+    {%- when 12, 1, 2 -%}
+      {%- assign last_updated_season = "Winter" -%}
+    {%- when 3, 4, 5 -%}
+      {%- assign last_updated_season = "Spring" -%}
+    {%- when 6, 7, 8 -%}
+      {%- assign last_updated_season = "Summer" -%}
+    {%- else -%}
+      {%- assign last_updated_season = "Fall" -%}
+  {%- endcase -%}
+{%- endif -%}
 {% if site.footer_fixed %}
     <footer class="fixed-bottom">
       <div class="container mt-0 text-center">
@@ -6,7 +19,7 @@
         <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
         {%- endif -%}
         {%- if site.last_updated -%}
-        Last updated: {{ "now" | date: '%B %d, %Y' }}.
+        Last updated: {{ last_updated_season }} {{ "now" | date: '%Y' }}.
         {%- endif %}
       </div>
     </footer>
@@ -18,7 +31,7 @@
         <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
         {%- endif -%}
         {%- if site.last_updated -%}
-        Last updated: {{ "now" | date: '%B %d, %Y' }}.
+        Last updated: {{ last_updated_season }} {{ "now" | date: '%Y' }}.
         {%- endif %}
       </div>
     </footer>
