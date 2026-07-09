@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Secure Cup Holder
-description: Two independent teams designed cup holders that stay fixed to a wheelchair tray under sudden movement.
+description: A cup holder that stays securely fixed to a wheelchair tray, waterproof and rugged against sudden movement.
 img: assets/img/projects/ceed/14-secure-cup-holder/1.PNG
 importance: 14
 category: ceed

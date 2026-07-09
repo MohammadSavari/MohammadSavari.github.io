@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Accessible Handle Grip
-description: Two independent teams designed adjustable-angle grips helping a child hold a spoon or paintbrush.
+description: An adjustable-angle handle grip that redirects a spoon or paintbrush to a comfortable angle for a bent wrist.
 img: assets/img/projects/ceed/13-accessible-handle-grip/1.png
 importance: 13
 category: ceed

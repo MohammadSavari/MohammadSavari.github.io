@@ -20,4 +20,5 @@ As a Complex Networks Researcher at the [Telfer School of Management](https://te
 
 <div class="project-gallery">
   <a href="{{ '/assets/img/projects/vsso/1.PNG' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/vsso/1.PNG' | relative_url }}" alt="VSSO network analysis"></a>
+  <a href="{{ '/assets/img/projects/vsso/2.PNG' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/vsso/2.PNG' | relative_url }}" alt="VSSO network analysis 2"></a>
 </div>

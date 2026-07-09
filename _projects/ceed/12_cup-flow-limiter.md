@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cup Flow Limiter
-description: Three independent teams designed flow-restricting inserts for a Nosey Cup to prevent spills and choking risk.
+description: A flow-restricting insert for a Nosey Cup that slows liquid flow to prevent spills and choking risk.
 img: assets/img/projects/ceed/12-cup-flow-limiter/1.jpg
 importance: 12
 category: ceed

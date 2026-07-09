@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Arm-Supported Cup Holder
-description: Three independent teams designed arm-mounted mug and bottle holders for hands-full mobility-aid users.
+description: An arm-mounted holder that lets a mobility-aid user carry and drink from a travel mug one-handed.
 img: assets/img/projects/ceed/10-arm-supported-cup-holder/1.png
 importance: 10
 category: ceed
