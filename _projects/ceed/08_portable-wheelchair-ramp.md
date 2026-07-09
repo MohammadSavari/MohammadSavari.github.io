@@ -16,3 +16,5 @@ category: ceed
 <div class="project-gallery">
   <a href="{{ '/assets/img/projects/ceed/08-portable-wheelchair-ramp/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/08-portable-wheelchair-ramp/1.png' | relative_url }}" alt="Rapid Ramp photo 1"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

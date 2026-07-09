@@ -16,3 +16,5 @@ category: ceed
 <div class="project-gallery">
   <a href="{{ '/assets/img/projects/ceed/04-wheelchair-rocking-board-play/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/04-wheelchair-rocking-board-play/1.png' | relative_url }}" alt="Wheelchair Rocking Board photo 1"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

@@ -32,3 +32,5 @@ Three teams independently tackled the same client brief.
 <div class="project-gallery">
   <a href="{{ '/assets/img/projects/ceed/12-cup-flow-limiter/3.jpg' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/12-cup-flow-limiter/3.jpg' | relative_url }}" alt="Flowtech CFL3 photo 1"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

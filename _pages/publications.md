@@ -32,7 +32,7 @@ nav_order: 2
 </div>
 
 <div style="margin-top: 2rem;">
-  <p><em>For the most up-to-date publication list and additional research works, please visit my <a href="https://github.com/MohammadSavari" target="_blank" style="text-decoration: underline;">GitHub profile</a>.</em></p>
+  <p><em>For the most up-to-date publication list and citation metrics, please visit my <a href="https://scholar.google.com/citations?user=qksz8SkAAAAJ" target="_blank" style="text-decoration: underline;">Google Scholar profile</a>.</em></p>
 </div>
 
 </div>

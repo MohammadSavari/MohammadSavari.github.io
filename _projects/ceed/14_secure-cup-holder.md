@@ -22,3 +22,5 @@ Two teams independently tackled the same client brief.
 </div>
 
 - [HydroHold](https://makerepo.com/mbrom064/2463.hydrohold)
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

@@ -20,3 +20,5 @@ Two teams independently tackled the same client brief.
 </div>
 
 - [Handl](https://makerepo.com/HatimShakir/2250.handl) — a grip with a flexible inner core that adapts to the user's hand shape and a smart stabilization system for adaptive angle control.
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

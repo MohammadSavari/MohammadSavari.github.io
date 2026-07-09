@@ -17,3 +17,5 @@ category: ceed
   <a href="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/1.png' | relative_url }}" alt="CTRL SYNC photo 1"></a>
   <a href="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/02-one-handed-switch-controller/2.png' | relative_url }}" alt="CTRL SYNC photo 2"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

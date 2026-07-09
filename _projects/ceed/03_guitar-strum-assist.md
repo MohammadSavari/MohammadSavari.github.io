@@ -24,3 +24,5 @@ Two teams independently tackled the same client brief.
 <div class="project-gallery">
   <a href="{{ '/assets/img/projects/ceed/03-guitar-strum-assist/2.jpg' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/03-guitar-strum-assist/2.jpg' | relative_url }}" alt="MANG photo 1"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

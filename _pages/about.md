@@ -3,7 +3,7 @@ layout: about
 title: About
 permalink: /
 
-subtitle: <b>Ph.D. Candidate @ </b><a href="https://uniweb.uottawa.ca/view/profile/members/4849"><b>University of Ottawa</b></a>
+subtitle: <b>Ph.D. Candidate in Mechanical Engineering @ </b><a href="https://uniweb.uottawa.ca/view/profile/members/4849"><b>University of Ottawa</b></a> · Network Science · Complex Systems
 
 profile:
   align: right

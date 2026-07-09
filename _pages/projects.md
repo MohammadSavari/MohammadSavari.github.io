@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: A look at my project work, including accessibility design projects managed at CEED.
+description: Research and engineering projects — network science research at the Telfer School of Management, and accessibility design projects managed at CEED.
 nav: true
 nav_order: 3
 ---

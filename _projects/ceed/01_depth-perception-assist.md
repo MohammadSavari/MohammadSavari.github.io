@@ -17,3 +17,5 @@ category: ceed
   <a href="{{ '/assets/img/projects/ceed/01-depth-perception-assist/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/01-depth-perception-assist/1.png' | relative_url }}" alt="Proxi-Glove photo 1"></a>
   <a href="{{ '/assets/img/projects/ceed/01-depth-perception-assist/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/01-depth-perception-assist/2.png' | relative_url }}" alt="Proxi-Glove photo 2"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

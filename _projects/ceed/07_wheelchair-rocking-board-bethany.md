@@ -20,3 +20,5 @@ This project was proposed by Bethany Children's Health Center, a pediatric rehab
   <a href="{{ '/assets/img/projects/ceed/07-wheelchair-rocking-board-bethany/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/07-wheelchair-rocking-board-bethany/2.png' | relative_url }}" alt="We Will Rock You design sketch"></a>
   <a href="{{ '/assets/img/projects/ceed/07-wheelchair-rocking-board-bethany/3.jpg' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/07-wheelchair-rocking-board-bethany/3.jpg' | relative_url }}" alt="We Will Rock You photo 3"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

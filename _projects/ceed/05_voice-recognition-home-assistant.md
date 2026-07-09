@@ -17,3 +17,5 @@ category: ceed
   <a href="{{ '/assets/img/projects/ceed/05-voice-recognition-home-assistant/1.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/05-voice-recognition-home-assistant/1.png' | relative_url }}" alt="Voice Recognition photo 1"></a>
   <a href="{{ '/assets/img/projects/ceed/05-voice-recognition-home-assistant/2.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/05-voice-recognition-home-assistant/2.png' | relative_url }}" alt="Voice Recognition photo 2"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

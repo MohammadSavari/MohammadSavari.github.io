@@ -30,3 +30,5 @@ Three teams independently tackled the same client brief.
 <div class="project-gallery">
   <a href="{{ '/assets/img/projects/ceed/10-arm-supported-cup-holder/3.png' | relative_url }}" target="_blank"><img src="{{ '/assets/img/projects/ceed/10-arm-supported-cup-holder/3.png' | relative_url }}" alt="Java Hook photo 1"></a>
 </div>
+
+<p class="mt-4"><a href="{{ '/projects/ceed/' | relative_url }}">&larr; All CEED projects</a></p>

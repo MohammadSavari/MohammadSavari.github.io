@@ -32,3 +32,4 @@ var/
 .installed.cfg
 *.egg
 *.out
+*.tex
