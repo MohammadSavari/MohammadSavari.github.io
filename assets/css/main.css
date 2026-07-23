@@ -592,6 +592,20 @@ footer.sticky-bottom {
   transform: scale(1.04);
   opacity: 0.9;
 }
+.projects .project-gallery.project-gallery--wide {
+  flex-direction: column;
+}
+.projects .project-gallery.project-gallery--wide a {
+  width: 100%;
+}
+.projects .project-gallery.project-gallery--wide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.projects .project-gallery.project-gallery--wide a:hover img {
+  transform: none;
+}
 .projects .card-item {
   width: auto;
   margin-bottom: 10px;
