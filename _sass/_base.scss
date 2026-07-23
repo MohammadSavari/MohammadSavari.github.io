@@ -607,6 +607,7 @@ footer.sticky-bottom {
 
     &.project-gallery--wide {
       flex-direction: column;
+      flex-wrap: nowrap;
 
       a {
         width: 100%;
