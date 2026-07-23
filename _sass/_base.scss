@@ -604,6 +604,24 @@ footer.sticky-bottom {
       transform: scale(1.04);
       opacity: 0.9;
     }
+
+    &.project-gallery--wide {
+      flex-direction: column;
+
+      a {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      a:hover img {
+        transform: none;
+      }
+    }
   }
 
   .card-item {
