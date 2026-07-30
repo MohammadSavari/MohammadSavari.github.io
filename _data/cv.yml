@@ -137,7 +137,22 @@
   contents:
     - year: Jul 2025
       items:
-        - "Savari, M., et al. Leveraging Social Contagion to Foster Consensus in Collective Decision-Making. Abstract paper presented at the International Conference on Computational Science, Singapore."
+        - 'Savari, M., Wernli, D., & Bouffanais, R. <a href="https://easychair.org/smart-program/ICCS2025/2025-07-09.html">How Social Contagions Shape Collective Consensus in the Presence of Scale-Free Networks</a>. Abstract paper presented at ICCS 2025: International Conference on Computational Science, Singapore.'
+
+    - year: July 2023
+      items:
+        - 'Savari, M., Horsevad, N., & Bouffanais, R. <a href="https://easychair.org/smart-program/ICCS2023/2023-07-03.html#talk:223379">Leveraging Social Contagion to Foster Consensus in Collective Decision-Making</a>. Abstract paper presented at ICCS 2023: 23rd International Conference on Computational Science, Prague, Czech Republic.'
+
+- title: Peer Review Service
+  type: time_table
+  contents:
+    - title: Reviewer
+      institution: 2025 64th IEEE Conference on Decision and Control (CDC), Rio de Janeiro, Brazil
+      year: Dec 2025
+
+    - title: Reviewer
+      institution: 2024 IEEE International Conference on Robotics and Automation (ICRA), Yokohama, Japan
+      year: May 2024
 
 - title: Voluntary and Community Service
   type: time_table
