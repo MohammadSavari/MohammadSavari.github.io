@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@{{ site.mdb.version }}/css/mdb.min.css" integrity="{{ site.mdb.integrity.css }}" crossorigin="anonymous" />
 
     <!-- Bootstrap Table -->
-    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@{{ site.bootstrap-table.version }}/dist/bootstrap-table.min.css">
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@{{ site.bootstrap-table.version }}/dist/bootstrap-table.min.css" integrity="{{ site.bootstrap-table.integrity.css }}" crossorigin="anonymous">
 
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{ site.fontawesome.version }}/css/all.min.css" integrity="{{ site.fontawesome.integrity }}" crossorigin="anonymous">
@@ -18,7 +18,7 @@
 
     {% if page.toc and page.toc.sidebar %}
     <!-- Sidebar Table of Contents -->
-    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet" integrity="sha256-W/ODz5gmpKA6SaehFmR8fVmBRb+lizLGsIKO3xmZy2M=" crossorigin="anonymous" />
     {% endif %}
 
     <!-- Styles -->
@@ -39,12 +39,3 @@
     {% endif %}
 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Z5H18TD4K"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-4Z5H18TD4K');
-    </script>
