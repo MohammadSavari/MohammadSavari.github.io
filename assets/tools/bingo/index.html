@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N×N Bingo Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: #fff;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .game {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    button {
+      min-height: 42px;
+      border: 2px solid #000;
+      background: #fff;
+      color: #000;
+      font: inherit;
+    }
+
+    input {
+      width: 80px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    button {
+      padding: 8px 18px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #555;
+      outline-offset: 2px;
+    }
+
+    .message {
+      min-height: 24px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .score {
+      margin: 18px 0;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      width: min(90vw, 520px);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border: 2px solid #000;
+    }
+
+    .cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 0;
+      min-height: 0;
+      border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      font-size: clamp(1rem, 5vw, 2rem);
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .cell:hover {
+      background: #eee;
+    }
+
+    .cell.crossed {
+	background: #d9f3f0;
+	text-decoration: line-through;
+	cursor: default;
+	}
+
+    .cell.completed-line {
+      background: #000;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="game">
+    <h1>N×N Bingo</h1>
+
+    <div class="controls">
+      <label for="sizeInput">
+        Grid size:
+        <input
+          id="sizeInput"
+          type="number"
+          min="2"
+          max="7"
+          step="1"
+          placeholder="2–7"
+        >
+      </label>
+
+      <button id="startButton" type="button">Start</button>
+      <button id="resetButton" type="button">Reset</button>
+    </div>
+
+    <div id="message" class="message" aria-live="polite"></div>
+
+    <div class="score">
+      Bingo: <span id="bingoCount">0</span>
+    </div>
+
+    <div id="grid" class="grid hidden" aria-label="Bingo grid"></div>
+  </main>
+
+  <script>
+    const sizeInput = document.getElementById("sizeInput");
+    const startButton = document.getElementById("startButton");
+    const resetButton = document.getElementById("resetButton");
+    const message = document.getElementById("message");
+    const bingoCount = document.getElementById("bingoCount");
+    const grid = document.getElementById("grid");
+
+    let size = 0;
+    let crossedCells = [];
+    let completedLines = new Set();
+    let bingoTotal = 0;
+
+    function showMessage(text) {
+      message.textContent = text;
+    }
+
+    function validateSize() {
+      const value = sizeInput.value.trim();
+
+      if (value === "") {
+        showMessage("Please enter a grid size.");
+        return null;
+      }
+
+      if (!/^\d+$/.test(value)) {
+        showMessage("Grid size must be a whole number.");
+        return null;
+      }
+
+      const number = Number(value);
+
+      if (number < 2 || number > 7) {
+        showMessage("Please enter a number from 2 through 7.");
+        return null;
+      }
+
+      return number;
+    }
+
+    function shuffle(numbers) {
+      for (let i = numbers.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[randomIndex]] =
+          [numbers[randomIndex], numbers[i]];
+      }
+
+      return numbers;
+    }
+
+    function startGame() {
+      const validatedSize = validateSize();
+
+      if (validatedSize === null) {
+        return;
+      }
+
+      size = validatedSize;
+      crossedCells = Array(size * size).fill(false);
+      completedLines = new Set();
+      bingoTotal = 0;
+
+      bingoCount.textContent = "0";
+      grid.innerHTML = "";
+      grid.classList.remove("hidden");
+      grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+      grid.setAttribute("aria-label", `${size} by ${size} Bingo grid`);
+
+      const numbers = shuffle(
+        Array.from({ length: size * size }, (_, index) => index + 1)
+      );
+
+      numbers.forEach((number, index) => {
+        const cell = document.createElement("button");
+
+        cell.type = "button";
+        cell.className = "cell";
+        cell.textContent = number;
+        cell.dataset.index = index;
+        cell.setAttribute("aria-label", `Number ${number}`);
+        cell.setAttribute("aria-pressed", "false");
+
+        cell.addEventListener("click", () => {
+          crossCell(cell, index);
+        });
+
+        grid.appendChild(cell);
+      });
+
+      showMessage("Click a number to cross it out.");
+    }
+
+    function crossCell(cell, index) {
+      if (crossedCells[index]) {
+        return;
+      }
+
+      crossedCells[index] = true;
+      cell.classList.add("crossed");
+      cell.setAttribute("aria-pressed", "true");
+
+      checkCompletedLines();
+    }
+
+    function getLines() {
+      const lines = [];
+
+      for (let row = 0; row < size; row++) {
+        lines.push({
+          id: `row-${row}`,
+          cells: Array.from(
+            { length: size },
+            (_, column) => row * size + column
+          )
+        });
+      }
+
+      for (let column = 0; column < size; column++) {
+        lines.push({
+          id: `column-${column}`,
+          cells: Array.from(
+            { length: size },
+            (_, row) => row * size + column
+          )
+        });
+      }
+
+      lines.push({
+        id: "main-diagonal",
+        cells: Array.from(
+          { length: size },
+          (_, index) => index * size + index
+        )
+      });
+
+      lines.push({
+        id: "opposite-diagonal",
+        cells: Array.from(
+          { length: size },
+          (_, index) => index * size + (size - 1 - index)
+        )
+      });
+
+      return lines;
+    }
+
+    function checkCompletedLines() {
+      const lines = getLines();
+
+      lines.forEach(line => {
+        const isComplete = line.cells.every(index => crossedCells[index]);
+
+        if (isComplete && !completedLines.has(line.id)) {
+          completedLines.add(line.id);
+          bingoTotal++;
+
+          line.cells.forEach(index => {
+            const cell = grid.querySelector(`[data-index="${index}"]`);
+            cell.classList.add("completed-line");
+          });
+        }
+      });
+
+      bingoCount.textContent = bingoTotal;
+    }
+
+    function resetGame() {
+      size = 0;
+      crossedCells = [];
+      completedLines = new Set();
+      bingoTotal = 0;
+
+      sizeInput.value = "";
+      bingoCount.textContent = "0";
+      grid.innerHTML = "";
+      grid.classList.add("hidden");
+      showMessage("");
+    }
+
+    startButton.addEventListener("click", startGame);
+    resetButton.addEventListener("click", resetGame);
+
+    sizeInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        startGame();
+      }
+    });
+  </script>
+</body>
+</html>

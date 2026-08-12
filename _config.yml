@@ -241,7 +241,7 @@ defaults:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  exclude: ['robots.txt']
+  exclude: ['robots.txt', 'assets/js/lib/*.js', 'assets/tools/bingo/index.html']
   uglifier_args:
     harmony: true
 
