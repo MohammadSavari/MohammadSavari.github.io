@@ -18,24 +18,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Arm-Supported Cup Holder | Mohammad  Savari</title>
+    <title>DownGit | Mohammad  Savari</title>
     <meta name="author" content="Mohammad  Savari">
-    <meta name="description" content="An arm-mounted holder that lets a mobility-aid user carry and drink from a travel mug one-handed.">
+    <meta name="description" content="Download a single folder or file from a public GitHub repository as a zip, without cloning the whole repo.">
     <meta name="keywords" content="Mohammad Savari, PhD candidate, network science, social contagion, complex systems, consensus formation, system dynamics, University of Ottawa, mechanical engineering">
 
     <!-- OpenGraph -->
     <meta property="og:site_name" content="Mohammad  Savari">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Mohammad  Savari | Arm-Supported Cup Holder">
-    <meta property="og:url" content="https://MohammadSavari.github.io/projects/ceed/10_arm-supported-cup-holder/">
-    <meta property="og:description" content="An arm-mounted holder that lets a mobility-aid user carry and drink from a travel mug one-handed.">
+    <meta property="og:title" content="Mohammad  Savari | DownGit">
+    <meta property="og:url" content="https://MohammadSavari.github.io/tools/downgit/">
+    <meta property="og:description" content="Download a single folder or file from a public GitHub repository as a zip, without cloning the whole repo.">
     <meta property="og:image" content="https://MohammadSavari.github.io/assets/img/Mohammad_pic.jpg">
     <meta property="og:locale" content="en">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Arm-Supported Cup Holder">
-    <meta name="twitter:description" content="An arm-mounted holder that lets a mobility-aid user carry and drink from a travel mug one-handed.">
+    <meta name="twitter:title" content="DownGit">
+    <meta name="twitter:description" content="Download a single folder or file from a public GitHub repository as a zip, without cloning the whole repo.">
     <meta name="twitter:image" content="https://MohammadSavari.github.io/assets/img/Mohammad_pic.jpg">
     
 
@@ -47,10 +47,10 @@
           "@type": "Person",
           "name": "Mohammad  Savari"
         },
-        "url": "https://MohammadSavari.github.io/projects/ceed/10_arm-supported-cup-holder/",
+        "url": "https://MohammadSavari.github.io/tools/downgit/",
         "@type": "WebSite",
-        "description": "An arm-mounted holder that lets a mobility-aid user carry and drink from a travel mug one-handed.",
-        "headline": "Arm-Supported Cup Holder",
+        "description": "Download a single folder or file from a public GitHub repository as a zip, without cloning the whole repo.",
+        "headline": "DownGit",
         "sameAs": ["https://orcid.org/0009-0009-7707-5776", "https://scholar.google.com/citations?user=qksz8SkAAAAJ", "https://github.com/MohammadSavari", "https://www.linkedin.com/in/Mohammad-Savari"],
         "name": "Mohammad  Savari",
         "@context": "https://schema.org"
@@ -80,7 +80,7 @@
     <link rel="shortcut icon" href="/assets/img/icon.jpg">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://mohammadsavari.github.io/projects/ceed/10_arm-supported-cup-holder/">
+    <link rel="canonical" href="https://mohammadsavari.github.io/tools/downgit/">
 
     <!-- Dark Mode -->
     
@@ -175,45 +175,60 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Arm-Supported Cup Holder</h1>
-            <p class="post-description">An arm-mounted holder that lets a mobility-aid user carry and drink from a travel mug one-handed.</p>
+            <h1 class="post-title">DownGit</h1>
+            <p class="post-description">Download a single folder or file from a public GitHub repository as a zip, without cloning the whole repo.</p>
           </header>
 
           <article>
-            <p>Three teams independently tackled the same client brief.</p>
+            <!-- markdownlint-disable MD033 -->
+<!-- pages/tools-downgit.md -->
+<div class="post">
 
-<p><strong>Client brief:</strong> People who use a mobility aid and have dexterity or strength limitations often have their hands full, making it hard to hold and drink from a travel mug. The client had found a mug with handle spacing that let it be carried on the forearm, but wanted a more adaptable, universal solution for other mugs. The task was to design a device that mounts safely and comfortably on an arm, holds a variety of travel mugs, and can be operated one-handed.</p>
+  <p>
+    Originally created by <a href="https://github.com/MinhasKamal" target="_blank" rel="noopener">Minhas Kamal</a>
+    as <a href="https://github.com/MinhasKamal/DownGit" target="_blank" rel="noopener">DownGit</a>
+    (<a href="https://github.com/MinhasKamal/DownGit/blob/master/LICENSE" target="_blank" rel="noopener">MIT licensed</a>).
+    This version has been rewritten and modified by me — the underlying idea (paste a GitHub folder or file link,
+    get a zip back, all client-side) is the same, but the implementation is new and fixes a few issues in the
+    original:
+  </p>
+  <ul>
+    <li>Branch names containing a "/" no longer break the link parser.</li>
+    <li>Large directories are no longer capped at 1,000 files.</li>
+    <li>No dependency on a third-party CDN that has since gone offline.</li>
+    <li>Rate-limit errors are shown clearly instead of failing silently.</li>
+    <li>Downloads use a bounded number of parallel requests, so one failed file no longer hangs or corrupts the whole zip.</li>
+  </ul>
 
-<p><strong>Teams &amp; solutions:</strong></p>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="ghd-url">GitHub folder or file URL</label>
+        <input type="url" class="form-control" id="ghd-url" placeholder="https://github.com/owner/repo/tree/branch/path/to/folder">
+        <small class="form-text text-muted">
+          Works with a folder link (<code>/tree/...</code>), a single file link (<code>/blob/...</code>), or a bare repo link.
+        </small>
+      </div>
+      <button type="button" class="btn btn-primary" id="ghd-download-btn">Download</button>
 
-<ul>
-  <li>
-<a href="https://makerepo.com/Darrell/2595.unimug" rel="external nofollow noopener" target="_blank">UniMug</a> — a spring-loaded, strap-based handle system that securely holds multiple mugs or bottles for hands-free carrying.</li>
-</ul>
+      <div id="ghd-progress" class="progress mt-3" style="display: none; height: 1.5rem;">
+        <div id="ghd-progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+      </div>
+      <div id="ghd-progress-text" class="small text-muted mt-1"></div>
 
-<div class="project-gallery">
-  <a href="/assets/img/projects/ceed/10-arm-supported-cup-holder/1.png" target="_blank"><img src="/assets/img/projects/ceed/10-arm-supported-cup-holder/1.png" alt="UniMug photo 1"></a>
+      <div id="ghd-error" class="alert alert-danger mt-3" style="display: none;" role="alert"></div>
+      <div id="ghd-warning" class="alert alert-warning mt-3" style="display: none;" role="alert"></div>
+    </div>
+  </div>
+
 </div>
 
-<ul>
-  <li>
-<a href="https://makerepo.com/ScottFulton/2594.arm-mounted-mugbottle-holder-team-am2g-any-mug-to-go" rel="external nofollow noopener" target="_blank">AM2G — Any Mug to Go</a> — an arm-mounted mug/bottle holder for a client with limited ability in one hand.</li>
-</ul>
+<script src="/assets/js/vendor/jszip.min.js"></script>
 
-<div class="project-gallery">
-  <a href="/assets/img/projects/ceed/10-arm-supported-cup-holder/2.jpg" target="_blank"><img src="/assets/img/projects/ceed/10-arm-supported-cup-holder/2.jpg" alt="AM2G photo 1"></a>
-</div>
+<script src="/assets/js/vendor/FileSaver.min.js"></script>
 
-<ul>
-  <li>
-<a href="https://makerepo.com/tristanpigeon/2593.java-hook" rel="external nofollow noopener" target="_blank">Java Hook</a> — a TPU bracket that conforms to different mug radii, with adjustable velcro straps for a range of mug and arm sizes.</li>
-</ul>
+<script src="/assets/js/github-folder-downloader.js"></script>
 
-<div class="project-gallery">
-  <a href="/assets/img/projects/ceed/10-arm-supported-cup-holder/3.png" target="_blank"><img src="/assets/img/projects/ceed/10-arm-supported-cup-holder/3.png" alt="Java Hook photo 1"></a>
-</div>
-
-<p class="mt-4"><a href="/projects/ceed/">← All CEED projects</a></p>
 
           </article>
 
