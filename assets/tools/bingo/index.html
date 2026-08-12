@@ -80,6 +80,16 @@
       outline-offset: 2px;
     }
 
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    button:disabled:hover {
+      background: #fff;
+      color: #000;
+    }
+
     .message {
       min-height: 24px;
       margin: 10px 0;
@@ -134,6 +144,13 @@
     .hidden {
       display: none;
     }
+
+    .history {
+      min-height: 24px;
+      margin-top: 18px;
+      font-size: 1rem;
+      word-break: break-word;
+    }
   </style>
 </head>
 <body>
@@ -146,15 +163,16 @@
         <input
           id="sizeInput"
           type="number"
-          min="2"
-          max="7"
+          min="3"
+          max="10"
           step="1"
-          placeholder="2–7"
+          placeholder="3–10"
         >
       </label>
 
       <button id="startButton" type="button">Start</button>
       <button id="resetButton" type="button">Reset</button>
+      <button id="undoButton" type="button" disabled>Undo</button>
     </div>
 
     <div id="message" class="message" aria-live="polite"></div>
@@ -164,20 +182,25 @@
     </div>
 
     <div id="grid" class="grid hidden" aria-label="Bingo grid"></div>
+
+    <div id="historyDisplay" class="history" aria-live="polite"></div>
   </main>
 
   <script>
     const sizeInput = document.getElementById("sizeInput");
     const startButton = document.getElementById("startButton");
     const resetButton = document.getElementById("resetButton");
+    const undoButton = document.getElementById("undoButton");
     const message = document.getElementById("message");
     const bingoCount = document.getElementById("bingoCount");
     const grid = document.getElementById("grid");
+    const historyDisplay = document.getElementById("historyDisplay");
 
     let size = 0;
     let crossedCells = [];
     let completedLines = new Set();
     let bingoTotal = 0;
+    let crossHistory = [];
 
     function showMessage(text) {
       message.textContent = text;
@@ -198,8 +221,8 @@
 
       const number = Number(value);
 
-      if (number < 2 || number > 7) {
-        showMessage("Please enter a number from 2 through 7.");
+      if (number < 3 || number > 10) {
+        showMessage("Please enter a number from 3 through 10.");
         return null;
       }
 
@@ -227,8 +250,11 @@
       crossedCells = Array(size * size).fill(false);
       completedLines = new Set();
       bingoTotal = 0;
+      crossHistory = [];
 
       bingoCount.textContent = "0";
+      undoButton.disabled = true;
+      updateHistoryDisplay();
       grid.innerHTML = "";
       grid.classList.remove("hidden");
       grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -264,10 +290,42 @@
       }
 
       crossedCells[index] = true;
+      crossHistory.push({ index, number: Number(cell.textContent) });
       cell.classList.add("crossed");
       cell.setAttribute("aria-pressed", "true");
 
       checkCompletedLines();
+      updateHistoryDisplay();
+      undoButton.disabled = false;
+    }
+
+    function undoLast() {
+      if (crossHistory.length === 0) {
+        return;
+      }
+
+      const last = crossHistory.pop();
+      crossedCells[last.index] = false;
+
+      const cell = grid.querySelector(`[data-index="${last.index}"]`);
+      cell.classList.remove("crossed");
+      cell.setAttribute("aria-pressed", "false");
+
+      // Recompute completed lines from scratch, since undoing a cell can
+      // un-complete one or more lines that shared it.
+      completedLines = new Set();
+      bingoTotal = 0;
+      grid.querySelectorAll(".cell").forEach(c => c.classList.remove("completed-line"));
+      checkCompletedLines();
+
+      updateHistoryDisplay();
+      undoButton.disabled = crossHistory.length === 0;
+    }
+
+    function updateHistoryDisplay() {
+      historyDisplay.textContent = crossHistory.length
+        ? "Crossed order: " + crossHistory.map(entry => entry.number).join(", ")
+        : "";
     }
 
     function getLines() {
@@ -337,9 +395,12 @@
       crossedCells = [];
       completedLines = new Set();
       bingoTotal = 0;
+      crossHistory = [];
 
       sizeInput.value = "";
       bingoCount.textContent = "0";
+      undoButton.disabled = true;
+      updateHistoryDisplay();
       grid.innerHTML = "";
       grid.classList.add("hidden");
       showMessage("");
@@ -347,6 +408,7 @@
 
     startButton.addEventListener("click", startGame);
     resetButton.addEventListener("click", resetGame);
+    undoButton.addEventListener("click", undoLast);
 
     sizeInput.addEventListener("keydown", event => {
       if (event.key === "Enter") {
