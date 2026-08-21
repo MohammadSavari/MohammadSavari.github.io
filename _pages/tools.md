@@ -11,6 +11,8 @@ children:
     permalink: /tools/downgit/
   - title: Bingo
     permalink: /assets/tools/bingo/
+  - title: Scribd Exporter
+    permalink: /tools/scribd-exporter/
 ---
 
 <!-- markdownlint-disable MD033 -->
@@ -36,6 +38,17 @@ children:
             <div class="card-body">
               <h3 class="card-title">Bingo</h3>
               <p class="card-text">A customizable N×N bingo grid — pick a size from 2 to 7, cross off numbers, and score a bingo for every completed row, column, or diagonal.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col mb-4">
+        <a href="{{ '/tools/scribd-exporter/' | relative_url }}" class="project-card-link">
+          <div class="card hoverable h-100">
+            <div class="card-body">
+              <h3 class="card-title">Scribd Exporter</h3>
+              <p class="card-text">A userscript that saves every page of a Scribd document as numbered PNGs, one zip, or one PDF — no screenshotting page by page.</p>
             </div>
           </div>
         </a>

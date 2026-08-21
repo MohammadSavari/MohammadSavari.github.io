@@ -240,7 +240,9 @@ defaults:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  exclude: ['robots.txt', 'assets/js/lib/*.js', 'assets/tools/bingo/index.html']
+  # *.user.js must stay unminified: uglifier strips comments, and a userscript's
+  # `// ==UserScript==` metadata block is comments — minified, it will not install.
+  exclude: ['robots.txt', 'assets/js/lib/*.js', 'assets/js/*.user.js', 'assets/tools/bingo/index.html']
   uglifier_args:
     harmony: true
 
