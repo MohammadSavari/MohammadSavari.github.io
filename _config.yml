@@ -240,9 +240,11 @@ defaults:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  # *.user.js must stay unminified: uglifier strips comments, and a userscript's
-  # `// ==UserScript==` metadata block is comments — minified, it will not install.
-  exclude: ['robots.txt', 'assets/js/lib/*.js', 'assets/js/*.user.js', 'assets/tools/bingo/index.html']
+  # Two kinds of file must stay unminified: *.user.js, because uglifier strips
+  # comments and a userscript's `// ==UserScript==` metadata block is comments, so a
+  # minified one will not install; and scribd-export.js, which the tool page displays
+  # to the reader as its own source.
+  exclude: ['robots.txt', 'assets/js/lib/*.js', 'assets/js/*.user.js', 'assets/js/scribd-export.js', 'assets/tools/bingo/index.html']
   uglifier_args:
     harmony: true
 
