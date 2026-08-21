@@ -208,23 +208,59 @@
     return url.href;
   }
 
-  /**
-   * Modern Scribd documents are one full-page image per page, so they can be saved
-   * byte-for-byte with no rendering at all. Older ones lay out real text over a
-   * partial image, and those have to be rendered. One probe of the first page tells
-   * us which kind this document is.
-   */
-  async function detectImageOnly(page) {
-    try {
-      const markup = await fetchMarkup(page);
-      const images = markup.match(/<img\b/gi)?.length || 0;
-      const hasText = /class=["']?[^"'>]*text_layer/i.test(markup)
-        && /<span|<div[^>]*class=["']?ff/i.test(markup);
-      return images === 1 && !hasText;
-    } catch (error) {
-      console.warn('[Scribd exporter] page probe failed, will render pages instead:', error);
-      return false;
+  // "left:31px;top:584px;width:238px" -> { left: 31, top: 584, width: 238 }
+  function styleLengths(style) {
+    const lengths = {};
+
+    for (const [, name, value] of (style || '').matchAll(/([a-z-]+)\s*:\s*(-?[\d.]+)px/gi)) {
+      lengths[name.toLowerCase()] = Number(value);
     }
+
+    return lengths;
+  }
+
+  /**
+   * A page qualifies for the fast path only if it is exactly one image that covers
+   * the whole page. That rules out the older layout, where Scribd packs regions of
+   * several pages into one sprite and positions clipped copies of it over real text —
+   * there the image alone is not the page, and the text would be lost.
+   */
+  function looksImageOnly(markup) {
+    const page = styleLengths(markup.match(/<div[^>]*class=["']?newpage[^>]*style=["']([^"']+)["']/i)?.[1]);
+    if (!page.width || !page.height) return false;
+
+    const images = markup.match(/<img[^>]*>/gi) || [];
+    if (images.length !== 1) return false;
+
+    const style = images[0].match(/style=["']([^"']+)["']/i)?.[1] || '';
+    const box = styleLengths(style);
+    const clip = style.match(/clip\s*:\s*rect\(\s*(-?[\d.]+)px[ ,]+\s*(-?[\d.]+)px[ ,]+\s*(-?[\d.]+)px[ ,]+\s*(-?[\d.]+)px\s*\)/i);
+
+    const width = clip ? Number(clip[2]) - Number(clip[4]) : box.width;
+    const height = clip ? Number(clip[3]) - Number(clip[1]) : box.height;
+    if (!width || !height) return false;
+
+    return (width * height) / (page.width * page.height) >= 0.95;
+  }
+
+  /**
+   * Sampled rather than assumed from page one: a document can open with a full-page
+   * cover scan and switch to the sprite layout later, and guessing wrong there would
+   * quietly save sprite fragments instead of pages.
+   */
+  async function detectFastPath(pages) {
+    const sample = [...new Set([0, Math.floor(pages.length / 2), pages.length - 1])];
+
+    for (const index of sample) {
+      try {
+        if (!looksImageOnly(await fetchMarkup(pages[index]))) return false;
+      } catch (error) {
+        console.warn('[Scribd exporter] page probe failed, rendering instead:', error);
+        return false;
+      }
+    }
+
+    return true;
   }
 
   // Fast path: Scribd's own JPEG, untouched.
@@ -243,6 +279,41 @@
 
     if (!blob.type.startsWith('image/')) throw new Error('Page did not come back as an image');
     return { blob, format: 'JPEG', extension: 'jpg', ...(await measure(blob)) };
+  }
+
+  /**
+   * Scribd packs several regions of a page into one sprite image and shows the right
+   * slice of it with the legacy CSS `clip: rect(...)` property. html2canvas does not
+   * implement `clip`, so without this every slice draws at full size and the same
+   * image appears several times on the page. Re-express each clip as a wrapper div
+   * with overflow:hidden, which html2canvas does understand.
+   */
+  function normalizeLegacyImageClip(image) {
+    const style = getComputedStyle(image);
+    const clip = style.clip.match(
+      /^rect\(\s*(-?[\d.]+)px[ ,]+\s*(-?[\d.]+)px[ ,]+\s*(-?[\d.]+)px[ ,]+\s*(-?[\d.]+)px\s*\)$/i,
+    );
+    if (!clip) return;
+
+    const [top, right, bottom, left] = clip.slice(1, 5).map(Number);
+    const wrapper = document.createElement('div');
+
+    wrapper.style.cssText = [
+      'position:absolute',
+      `left:${(parseFloat(style.left) || 0) + left}px`,
+      `top:${(parseFloat(style.top) || 0) + top}px`,
+      `width:${Math.max(0, right - left)}px`,
+      `height:${Math.max(0, bottom - top)}px`,
+      'overflow:hidden',
+    ].join(';');
+
+    image.style.position = 'absolute';
+    image.style.left = `${-left}px`;
+    image.style.top = `${-top}px`;
+    image.style.clip = 'auto';
+
+    image.parentNode.insertBefore(wrapper, image);
+    wrapper.appendChild(image);
   }
 
   // Slow path: rebuild the page offscreen and rasterise it.
@@ -267,6 +338,9 @@
         image.crossOrigin = 'anonymous';
         image.src = absoluteImageUrl(source);
         await image.decode().catch(() => {});
+
+        // Needs the decoded image in the document: the clip is read off computed style.
+        normalizeLegacyImageClip(image);
       }
 
       const width = Math.round(parseFloat(node.style.width) || node.offsetWidth);
@@ -348,7 +422,7 @@
       }
 
       ui.status('Checking page format…');
-      const imageOnly = await detectImageOnly(pages[0]);
+      const imageOnly = await detectFastPath(pages);
       console.info(`[Scribd exporter] ${pages.length} pages, ${imageOnly ? 'image' : 'render'} mode`);
 
       const JSZip = mode === 'zip' ? await library('JSZip') : null;
