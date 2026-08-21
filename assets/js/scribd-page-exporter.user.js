@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Scribd Full Page PNG Exporter
+// @name         Scribd Document Exporter
 // @namespace    local.scribd.exporter
-// @version      1.7.0
-// @description  Open Scribd documents in embed view and save every complete page as separate PNGs, one ZIP, or one PDF.
+// @version      2.0.0
+// @description  Save a whole Scribd document as one PDF or one ZIP of page images, on its own or driven by a link from the tool page.
 // @author       Mohammad Savari
 // @homepageURL  https://mohammadsavari.github.io/tools/scribd-exporter/
 // @downloadURL  https://mohammadsavari.github.io/assets/js/scribd-page-exporter.user.js
@@ -13,7 +13,6 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js
 // @grant        GM_xmlhttpRequest
-// @grant        GM_download
 // @connect      html.scribd.com
 // @connect      html.scribdassets.com
 // @connect      *.scribdassets.com
@@ -27,7 +26,9 @@
   const match = location.href.match(/\/(?:document|doc|presentation|book)\/(\d+)/i);
 
   if (match) {
-    location.href = `https://www.scribd.com/embeds/${match[1]}/content`;
+    // Carry the hash across, so a /document/<id> link that asks for an export
+    // still asks for it after the hop to the embed view.
+    location.href = `https://www.scribd.com/embeds/${match[1]}/content${location.hash}`;
     return;
   }
 
@@ -38,19 +39,19 @@
   const DOC_ID = location.pathname.match(/^\/embeds\/(\d+)\//)[1];
 
   const OUTPUTS = {
-    png: {
-      label: 'PNG',
-      title: 'Save every page as a separate PNG file',
+    pdf: {
+      label: 'PDF',
+      title: `Save the whole document as a single scribd-${DOC_ID}.pdf`,
     },
     zip: {
       label: 'ZIP',
-      title: `Save every page as a PNG inside scribd-${DOC_ID}.zip`,
-    },
-    pdf: {
-      label: 'PDF',
-      title: `Save every page into a single scribd-${DOC_ID}.pdf`,
+      title: `Save every page as a PNG inside a single scribd-${DOC_ID}.zip`,
     },
   };
+
+  // The tool page hands a request over as /embeds/<id>/content#export=pdf, so a
+  // pasted link can start an export without the user hunting for a button.
+  const REQUESTED_MODE = location.hash.match(/^#export=(pdf|zip)$/i)?.[1].toLowerCase();
 
   // @require libraries land on the userscript sandbox's window, but which global
   // they define differs by build, so resolve defensively rather than assuming one.
@@ -501,8 +502,8 @@
   // Download
   // ---------------------------------------------------------------------------
 
-  // The first file of a run may prompt (so the user can pick a folder);
-  // every later file is written silently to that same download location.
+  // Every run produces exactly one file, so this never trips the browser's
+  // "allow multiple downloads?" prompt.
   function downloadBlob(blob, name) {
     return new Promise((resolve) => {
       const url = URL.createObjectURL(blob);
@@ -534,11 +535,11 @@
 
     let exported = 0;
     const failures = [];
+
+    // Touch the bundling library up front, so one that failed to load says so once
+    // instead of failing every single page after a long render.
     const zip = mode === 'zip' ? new (getJsZip())() : null;
     let pdf = null;
-
-    // Resolve the PDF library before rendering anything, so a library that failed to
-    // load reports itself once instead of failing every single page.
     if (mode === 'pdf') getJsPdf();
 
     try {
@@ -549,20 +550,17 @@
 
       const digits = Math.max(3, String(configs[configs.length - 1].pageNum).length);
 
-      for (let index = 0; index < configs.length; index += 1) {
+      for (const [index, config] of configs.entries()) {
         throwIfStopped();
 
-        const config = configs[index];
         button.textContent = `${index + 1}/${configs.length}`;
         button.title = `Rendering page ${config.pageNum} (${config.source})`;
 
         try {
           const canvas = await renderPage(config);
-          const filename = `page-${String(config.pageNum).padStart(digits, '0')}.png`;
 
           if (mode === 'pdf') pdf = addPdfPage(pdf, canvas);
-          else if (mode === 'zip') zip.file(filename, await canvasToBlob(canvas));
-          else await downloadBlob(await canvasToBlob(canvas), filename);
+          else zip.file(`page-${String(config.pageNum).padStart(digits, '0')}.png`, await canvasToBlob(canvas));
 
           exported += 1;
         } catch (error) {
@@ -570,31 +568,23 @@
           failures.push(config.pageNum);
           console.error(`[Scribd exporter] page ${config.pageNum} failed:`, error);
         }
-
-        // Loose PNGs download one per page, so give the browser time to register
-        // each one; the bundled modes only need a cancellation checkpoint here.
-        await cancellableDelay(mode === 'png' ? 200 : 0);
       }
 
-      if (mode !== 'png') {
-        if (!exported) throw new Error('No page could be rendered, so there is nothing to bundle');
+      if (!exported) throw new Error('No page could be rendered, so there is nothing to save');
 
-        button.textContent = '...';
-        button.title = mode === 'zip' ? 'Building the zip' : 'Building the PDF';
+      button.textContent = '...';
+      button.title = mode === 'zip' ? 'Building the zip' : 'Building the PDF';
 
-        const bundle = mode === 'zip'
-          ? await generateZip(zip, (percent) => {
-              button.textContent = `${Math.round(percent)}%`;
-            })
-          : pdf.output('blob');
+      const bundle = mode === 'zip'
+        ? await generateZip(zip, (percent) => {
+            button.textContent = `${Math.round(percent)}%`;
+          })
+        : pdf.output('blob');
 
-        await downloadBlob(bundle, `scribd-${DOC_ID}.${mode}`);
-      }
+      const filename = `scribd-${DOC_ID}.${mode}`;
+      await downloadBlob(bundle, filename);
 
-      const outcome = mode === 'png'
-        ? `${exported} page${exported === 1 ? '' : 's'} exported to the browser download folder`
-        : `${exported} page${exported === 1 ? '' : 's'} exported as scribd-${DOC_ID}.${mode}`;
-
+      const outcome = `${exported} page${exported === 1 ? '' : 's'} saved as ${filename}`;
       flashStatus(
         button,
         mode,
@@ -608,8 +598,7 @@
         button,
         mode,
         'Stop',
-        `Stopped after ${exported} page${exported === 1 ? '' : 's'}`
-          + (mode === 'png' ? '' : ' (nothing was saved)')
+        `Stopped after ${exported} page${exported === 1 ? '' : 's'}; nothing was saved`
           + (failures.length ? ` (failed: ${failures.join(', ')})` : ''),
       );
       console.info(`[Scribd exporter] stopped after ${exported} pages`);
@@ -670,9 +659,9 @@
   }
 
   function addButtons() {
-    if (document.getElementById(BUTTON_ID_PREFIX + 'png')) return;
+    if (document.getElementById(BUTTON_ID_PREFIX + 'pdf')) return;
 
-    const modes = ['png', 'zip', 'pdf'];
+    const modes = Object.keys(OUTPUTS);
     const buttons = modes.map((mode, index) => createActionButton(mode, 16 + index * 46));
 
     const stopButton = document.createElement('button');
@@ -714,6 +703,15 @@
     });
 
     document.body.appendChild(stopButton);
+
+    // Honour a request handed over from the tool page. The short wait lets Scribd
+    // hydrate its first pages, so discovery starts with something to look at.
+    if (REQUESTED_MODE) {
+      const requested = buttons[modes.indexOf(REQUESTED_MODE)];
+      requested.textContent = '...';
+      requested.title = `Starting the ${REQUESTED_MODE.toUpperCase()} export requested by the link`;
+      setTimeout(() => requested.click(), 1200);
+    }
   }
 
   if (document.readyState === 'loading') {
